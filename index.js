@@ -18,10 +18,15 @@ app.set('view engine', 'html');
 // app.set('views', __dirname + '/pages');
 // app.set('view engine', 'ejs');
 
+//
+// app.get('/', function(request, response) {
+//   response.render('home.html');
+// });
 
-app.get('/', function(request, response) {
-  response.render('home.html');
+app.get("/", function (req, res) {
+      res.redirect("/start.html");
 });
+
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
