@@ -5,6 +5,9 @@
   "engines": {
     "node": "6.11.1"
   },
+  "scripts": {
+  "test": "node index.js"
+  }, 
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
