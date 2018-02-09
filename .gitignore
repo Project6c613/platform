@@ -7,3 +7,8 @@ node_modules
 ./serviceAccount.json
 .DS_Store
 .env
+.travis.yml
+
+# Rules 
+storeage.rules
+database.rules.json
