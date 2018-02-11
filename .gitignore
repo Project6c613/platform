@@ -8,6 +8,7 @@ node_modules
 .DS_Store
 .env
 .travis.yml
+firebase-debug.log
 
 # Rules 
 storeage.rules
