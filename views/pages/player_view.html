@@ -3,8 +3,8 @@
   <head>
     <style> 
         @font-face {
-            font-family: "Play Time - Demo";
-            src: url("pt.ttf");
+            font-family: "Komika Text";
+            src: url("komika.ttf");
         }
         @font-face {
             font-family: "ObelixPro";
@@ -45,26 +45,26 @@
       </div>
 
       <!-- time (Rectangle) -->
-      <div id="u99" class="ax_default label" data-label="time">
-        <div id="u99_div" class=""></div>
+      <div id="u99" class="ax_default label disabled" data-label="time">
+        <div id="u99_div" class="disabled"></div>
         <!-- Unnamed () -->
         <div id="u100" class="text">
-          <p><span style="font-family:'';">00 </span><span style="font-family:'Comic Sans MS';">:</span><span style="font-family:'';"> 00</span></p><p><span style="font-family:'';"><br></span></p>
+          <p><span>00 : 00</span></p>
         </div>
       </div>
 
       <!-- hr min (Rectangle) -->
-      <div id="u101" class="ax_default label" data-label="hr min">
-        <div id="u101_div" class=""></div>
+      <div id="u101" class="ax_default label disabled" data-label="hr min">
+        <div id="u101_div" class="disabled"></div>
         <!-- Unnamed () -->
         <div id="u102" class="text">
-          <p><span>hr&nbsp; &nbsp; &nbsp; min</span></p>
+          <p><span>hr&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; min</span></p>
         </div>
       </div>
 
       <!-- leaderboard (Text Area) -->
       <div id="u103" class="ax_default text_area" data-label="leaderboard">
-        <textarea id="u103_input">1&nbsp; &nbsp;&nbsp; Kronos
+        <textarea id="u103_input" readonly>1&nbsp; &nbsp;&nbsp; Kronos
 2&nbsp; &nbsp;&nbsp; Vidar&nbsp; &nbsp;&nbsp; 
 3&nbsp; &nbsp;&nbsp; blakeks4711
 4&nbsp; &nbsp;&nbsp; Spaulding&nbsp; 
@@ -128,14 +128,14 @@
       <div id="u112" class="ax_default label" data-label="username">
         <div id="u112_div" class=""></div>
         <!-- Unnamed () -->
-        <div id="u113" class="text">
-          <p><span>Atari</span></p>
+        <div id="u113" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
         </div>
       </div>
 
       <!-- announcements (Text Area) -->
       <div id="u114" class="ax_default text_area" data-label="announcements">
-        <textarea id="u114_input">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
+        <textarea id="u114_input" readonly>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut
 
 tincidunt ex et commodo posuere sem nisi pharetra ligula et dignissim urna lacus sed tortor 
 
@@ -186,8 +186,8 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
             <div id="u122" class="ax_default label" data-label="profile - username">
               <div id="u122_div" class=""></div>
               <!-- Unnamed () -->
-              <div id="u123" class="text">
-                <p><span>Atari</span></p>
+              <div id="u123" class="text" style="display:none; visibility: hidden">
+                <p><span></span></p>
               </div>
             </div>
 
@@ -376,7 +376,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
           <div id="u163_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u164" class="text">
-            <p><span>arcade</span></p>
+            <p><span>Arcade</span></p>
           </div>
         </div>
 
@@ -407,7 +407,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
           <div id="u170_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u171" class="text">
-            <p><span>library</span></p>
+            <p><span>Library</span></p>
           </div>
         </div>
       </div>
@@ -473,7 +473,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
           <div id="u185_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u186" class="text">
-            <p><span>foyer</span></p>
+            <p><span>Foyer</span></p>
           </div>
         </div>
       </div>
@@ -495,7 +495,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
           <div id="u190_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u191" class="text">
-            <p><span>kitchen</span></p>
+            <p><span>Kitchen</span></p>
           </div>
         </div>
       </div>
@@ -517,7 +517,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
           <div id="u195_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u196" class="text">
-            <p><span>dining room</span></p>
+            <p><span>Dining Room</span></p>
           </div>
         </div>
       </div>
@@ -567,7 +567,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
               <script id="u205_script" type="axure-repeater-template">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206" class="ax_default u206" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206" class="ax_default u206" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207" class="ax_default box_1 u207" data-label="rectangle repeater">
@@ -597,10 +597,10 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
                 </div>
               </script>
-              <div id="u205-1" class="preeval" style="width: 383px; height: 50px;">
+              <div id="u205-1" class="preeval" style="width: 383px; height: 47px;">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206-1" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206-1" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207-1" class="ax_default box_1 u207" data-label="rectangle repeater" style="width: 383px; height: 47px; left: 0px; top: 0px;visibility: inherit">
@@ -621,7 +621,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
 
                   <!-- question name repeater (Rectangle) -->
-                  <div id="u211-1" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 11px;visibility: inherit">
+                  <div id="u211-1" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 5px;visibility: inherit">
                     <div id="u211-1_div" class="u211_div" style="width: 281px; height: 39px;visibility: inherit"></div>
                     <!-- Unnamed () -->
                     <div id="u212-1" class="u212 text" style="visibility: inherit">
@@ -630,10 +630,10 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
                 </div>
               </div>
-              <div id="u205-2" class="preeval" style="width: 383px; height: 50px;">
+              <div id="u205-2" class="preeval" style="width: 383px; height: 47px;">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206-2" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206-2" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207-2" class="ax_default box_1 u207" data-label="rectangle repeater" style="width: 383px; height: 47px; left: 0px; top: 0px;visibility: inherit">
@@ -654,7 +654,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
 
                   <!-- question name repeater (Rectangle) -->
-                  <div id="u211-2" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 11px;visibility: inherit">
+                  <div id="u211-2" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 5px;visibility: inherit">
                     <div id="u211-2_div" class="u211_div" style="width: 281px; height: 39px;visibility: inherit"></div>
                     <!-- Unnamed () -->
                     <div id="u212-2" class="u212 text" style="visibility: inherit">
@@ -663,10 +663,10 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
                 </div>
               </div>
-              <div id="u205-3" class="preeval" style="width: 383px; height: 50px;">
+              <div id="u205-3" class="preeval" style="width: 383px; height: 47px;">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206-3" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206-3" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207-3" class="ax_default box_1 u207" data-label="rectangle repeater" style="width: 383px; height: 47px; left: 0px; top: 0px;visibility: inherit">
@@ -687,7 +687,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
 
                   <!-- question name repeater (Rectangle) -->
-                  <div id="u211-3" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 11px;visibility: inherit">
+                  <div id="u211-3" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 5px;visibility: inherit">
                     <div id="u211-3_div" class="u211_div" style="width: 281px; height: 39px;visibility: inherit"></div>
                     <!-- Unnamed () -->
                     <div id="u212-3" class="u212 text" style="visibility: inherit">
@@ -696,10 +696,10 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
                 </div>
               </div>
-              <div id="u205-4" class="preeval" style="width: 383px; height: 50px;">
+              <div id="u205-4" class="preeval" style="width: 383px; height: 47px;">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206-4" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206-4" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207-4" class="ax_default box_1 u207" data-label="rectangle repeater" style="width: 383px; height: 47px; left: 0px; top: 0px;visibility: inherit">
@@ -720,7 +720,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
 
                   <!-- question name repeater (Rectangle) -->
-                  <div id="u211-4" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 11px;visibility: inherit">
+                  <div id="u211-4" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 5px;visibility: inherit">
                     <div id="u211-4_div" class="u211_div" style="width: 281px; height: 39px;visibility: inherit"></div>
                     <!-- Unnamed () -->
                     <div id="u212-4" class="u212 text" style="visibility: inherit">
@@ -729,10 +729,10 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
                 </div>
               </div>
-              <div id="u205-5" class="preeval" style="width: 383px; height: 50px;">
+              <div id="u205-5" class="preeval" style="width: 383px; height: 47px;">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206-5" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206-5" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207-5" class="ax_default box_1 u207" data-label="rectangle repeater" style="width: 383px; height: 47px; left: 0px; top: 0px;visibility: inherit">
@@ -753,7 +753,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
 
                   <!-- question name repeater (Rectangle) -->
-                  <div id="u211-5" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 11px;visibility: inherit">
+                  <div id="u211-5" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 5px;visibility: inherit">
                     <div id="u211-5_div" class="u211_div" style="width: 281px; height: 39px;visibility: inherit"></div>
                     <!-- Unnamed () -->
                     <div id="u212-5" class="u212 text" style="visibility: inherit">
@@ -762,10 +762,10 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
                 </div>
               </div>
-              <div id="u205-6" class="preeval" style="width: 383px; height: 50px;">
+              <div id="u205-6" class="preeval" style="width: 383px; height: 47px;">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206-6" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206-6" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207-6" class="ax_default box_1 u207" data-label="rectangle repeater" style="width: 383px; height: 47px; left: 0px; top: 0px;visibility: inherit">
@@ -786,7 +786,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
 
                   <!-- question name repeater (Rectangle) -->
-                  <div id="u211-6" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 11px;visibility: inherit">
+                  <div id="u211-6" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 5px;visibility: inherit">
                     <div id="u211-6_div" class="u211_div" style="width: 281px; height: 39px;visibility: inherit"></div>
                     <!-- Unnamed () -->
                     <div id="u212-6" class="u212 text" style="visibility: inherit">
@@ -795,10 +795,10 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
                 </div>
               </div>
-              <div id="u205-7" class="preeval" style="width: 383px; height: 50px;">
+              <div id="u205-7" class="preeval" style="width: 383px; height: 47px;">
 
                 <!-- Unnamed (Group) -->
-                <div id="u206-7" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="50">
+                <div id="u206-7" class="ax_default u206" style="visibility: inherit" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- rectangle repeater (Rectangle) -->
                   <div id="u207-7" class="ax_default box_1 u207" data-label="rectangle repeater" style="width: 383px; height: 47px; left: 0px; top: 0px;visibility: inherit">
@@ -819,7 +819,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                   </div>
 
                   <!-- question name repeater (Rectangle) -->
-                  <div id="u211-7" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 11px;visibility: inherit">
+                  <div id="u211-7" class="ax_default label u211" data-label="question name repeater" style="width: 281px; height: 39px; left: 93px; top: 5px;visibility: inherit">
                     <div id="u211-7_div" class="u211_div" style="width: 281px; height: 39px;visibility: inherit"></div>
                     <!-- Unnamed () -->
                     <div id="u212-7" class="u212 text" style="visibility: inherit">
@@ -866,7 +866,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
                     <div id="u219_div" class=""></div>
                     <!-- Unnamed () -->
                     <div id="u220" class="text">
-                      <p><span>Lorem ipsum dolor sit amet consectetur adipiscing elit Aenean euismod bibendum laoreet Proin gravida dolor sit amet lacus accumsan et viverra justo commodo Proin sodales pulvinar tempor Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus Nam fermentum nulla luctus pharetra vulputate felis tellus mollis orci sed rhoncus sapien </span></p>
+                      <p><span style="font-family:'Komika Text';font-weight:400;">Lorem ipsum dolor sit amet consectetur adipiscing elit Aenean euismod bibendum laoreet Proin gravida dolor sit amet lacus accumsan et viverra justo commodo Proin sodales pulvinar tempor Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus Nam fermentum nulla luctus pharetra vulputate felis tellus mollis orci sed rhoncus sapien</span><span style="font-family:'';font-weight:400;"> </span></p>
                     </div>
                   </div>
                 </div>
@@ -878,7 +878,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
               <div id="u221_div" class=""></div>
               <!-- Unnamed () -->
               <div id="u222" class="text">
-                <p><span style="font-family:'';font-weight:400;font-size:18px;">Difficulty</span><span style="font-family:'';font-weight:400;font-size:7px;"> </span><span style="font-family:'Arial Rounded MT Bold', 'Arial Rounded MT';font-weight:700;font-size:18px;">: </span><span style="font-family:'';font-weight:410;font-size:18px;">Medium</span></p>
+                <p><span style="font-family:'Komika Text';font-weight:400;font-size:18px;">Difficulty</span><span style="font-family:'Komika Text';font-weight:400;font-size:7px;"> </span><span style="font-family:'Komika Text Bold', 'Komika Text';font-weight:700;font-size:18px;">: </span><span style="font-family:'Komika Text';font-weight:400;font-style:normal;font-size:18px;">Medium</span></p>
               </div>
             </div>
 
@@ -959,7 +959,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
               <div id="u238_div" class=""></div>
               <!-- Unnamed () -->
               <div id="u239" class="text">
-                <p><span style="font-family:'';font-weight:400;">Congratulations</span><span style="font-family:'Comic Sans MS';font-weight:400;">,</span><span style="font-family:'';font-weight:400;"> you earned a key in the </span><span style="font-family:'Comic Sans MS';font-weight:400;">[[</span><span style="font-family:'';font-weight:400;">room</span><span style="font-family:'Comic Sans MS';font-weight:400;">]]!</span><span style="font-family:'';font-weight:400;"> You only need </span><span style="font-family:'Comic Sans MS';font-weight:400;">[[</span><span style="font-family:'';font-weight:400;">keys left</span><span style="font-family:'Comic Sans MS';font-weight:400;">]]</span><span style="font-family:'';font-weight:400;"> to unlock the room</span><span style="font-family:'Comic Sans MS';font-weight:400;">!</span></p>
+                <p><span>Congratulations, you earned a key in the [[room]]! You only need [[keys left]] to unlock the room!</span></p>
               </div>
             </div>
 
@@ -985,8 +985,8 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
               </div>
             </div>
 
-            <!-- correct! (Rectangle) -->
-            <div id="u244" class="ax_default label" data-label="correct!">
+            <!-- incorrect! (Rectangle) -->
+            <div id="u244" class="ax_default label" data-label="incorrect!">
               <div id="u244_div" class=""></div>
               <!-- Unnamed () -->
               <div id="u245" class="text">
@@ -999,7 +999,7 @@ commodo arcu et enim semper dapibus Vestibulum ante ipsum
               <div id="u246_div" class=""></div>
               <!-- Unnamed () -->
               <div id="u247" class="text">
-                <p><span style="font-family:'';font-weight:410;">Sorry</span><span style="font-family:'Arial Rounded MT Bold', 'Arial Rounded MT';font-weight:700;">,</span><span style="font-family:'';font-weight:410;"> that is the wrong answer</span><span style="font-family:'Arial Rounded MT Bold', 'Arial Rounded MT';font-weight:700;">.</span><span style="font-family:'';font-weight:410;"> Try again</span><span style="font-family:'Arial Rounded MT Bold', 'Arial Rounded MT';font-weight:700;">!</span></p>
+                <p><span style="font-family:'Komika Text';font-weight:400;font-style:normal;">Sorry</span><span style="font-family:'Komika Text Bold', 'Komika Text';font-weight:700;">,</span><span style="font-family:'Komika Text';font-weight:400;font-style:normal;"> that is the wrong answer</span><span style="font-family:'Komika Text Bold', 'Komika Text';font-weight:700;">.</span><span style="font-family:'Komika Text';font-weight:400;font-style:normal;"> Try again</span><span style="font-family:'Komika Text Bold', 'Komika Text';font-weight:700;">!</span></p>
               </div>
             </div>
 

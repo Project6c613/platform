@@ -1,6 +1,6 @@
 @font-face {
-font-family: "Play Time - Demo";
-src: url("pt.ttf");
+font-family: "Komika Text";
+src: url("komika.ttf");
 }
 
 @font-face {
@@ -13,7 +13,7 @@ body {
   background-image:none;
   position:static;
   left:auto;
-  width:1255px;
+  width:1259px;
   margin-left:0;
   margin-right:0;
   text-align:left;
@@ -25,7 +25,7 @@ body {
 #u98 {
   border-width:0px;
   position:absolute;
-  left:4px;
+  left:8px;
   top:-6px;
   width:1251px;
   height:608px;
@@ -61,8 +61,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:255px;
-  height:114px;
+  width:230px;
+  height:61px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -70,18 +70,24 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-size:48px;
+  font-family:'Komika Text';
+  font-weight:400;
+  font-style:normal;
+  font-size:60px;
   color:#FFFFFF;
   text-align:center;
 }
 #u99 {
   border-width:0px;
   position:absolute;
-  left:992px;
-  top:50px;
-  width:255px;
-  height:114px;
-  font-size:48px;
+  left:1012px;
+  top:53px;
+  width:230px;
+  height:61px;
+  font-family:'Komika Text';
+  font-weight:400;
+  font-style:normal;
+  font-size:60px;
   color:#FFFFFF;
   text-align:center;
 }
@@ -90,7 +96,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:255px;
+  width:230px;
   word-wrap:break-word;
 }
 #u101_div {
@@ -98,8 +104,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:181px;
-  height:62px;
+  width:230px;
+  height:53px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -107,7 +113,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -117,11 +123,11 @@ body {
 #u101 {
   border-width:0px;
   position:absolute;
-  left:1029px;
-  top:111px;
-  width:181px;
-  height:62px;
-  font-family:'';
+  left:1012px;
+  top:120px;
+  width:230px;
+  height:53px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -133,7 +139,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:181px;
+  width:230px;
   word-wrap:break-word;
 }
 #u103 {
@@ -142,19 +148,19 @@ body {
   left:1018px;
   top:243px;
   width:208px;
-  height:302px;
+  height:314px;
 }
 #u103_input {
   position:absolute;
   left:0px;
   top:0px;
   width:208px;
-  height:302px;
+  height:314px;
   background-color:transparent;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
-  font-size:18px;
+  font-size:16px;
   text-decoration:none;
   color:#FFFFFF;
   text-align:left;
@@ -276,7 +282,7 @@ body {
   left:0px;
   top:0px;
   width:140px;
-  height:20px;
+  height:16px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -284,7 +290,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -295,10 +301,10 @@ body {
   border-width:0px;
   position:absolute;
   left:156px;
-  top:108px;
+  top:105px;
   width:140px;
-  height:20px;
-  font-family:'';
+  height:16px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -311,7 +317,7 @@ body {
   left:0px;
   top:0px;
   width:140px;
-  height:20px;
+  height:16px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -319,7 +325,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -334,6 +340,7 @@ body {
   left:0px;
   top:0px;
   width:140px;
+  visibility:hidden;
   word-wrap:break-word;
 }
 #u114 {
@@ -351,10 +358,10 @@ body {
   width:298px;
   height:322px;
   background-color:transparent;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
-  font-size:18px;
+  font-size:16px;
   text-decoration:none;
   color:#FFFFFF;
   text-align:left;
@@ -489,7 +496,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text Bold', 'Komika Text';
   font-weight:700;
   font-style:normal;
   font-size:28px;
@@ -498,10 +505,10 @@ body {
   border-width:0px;
   position:absolute;
   left:252px;
-  top:78px;
+  top:76px;
   width:100px;
   height:27px;
-  font-family:'';
+  font-family:'Komika Text Bold', 'Komika Text';
   font-weight:700;
   font-style:normal;
   font-size:28px;
@@ -512,6 +519,7 @@ body {
   left:0px;
   top:0px;
   width:100px;
+  visibility:hidden;
   word-wrap:break-word;
 }
 #u124_div {
@@ -528,7 +536,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -540,7 +548,7 @@ body {
   top:108px;
   width:163px;
   height:27px;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -567,7 +575,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -579,7 +587,7 @@ body {
   top:134px;
   width:222px;
   height:27px;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -606,7 +614,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -618,7 +626,7 @@ body {
   top:159px;
   width:222px;
   height:27px;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:20px;
@@ -1172,8 +1180,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:63px;
-  height:18px;
+  width:60px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1181,7 +1189,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1190,11 +1198,11 @@ body {
 #u160 {
   border-width:0px;
   position:absolute;
-  left:472px;
+  left:474px;
   top:120px;
-  width:63px;
-  height:18px;
-  font-family:'';
+  width:60px;
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1205,8 +1213,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:63px;
-  height:18px;
+  width:60px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1214,7 +1222,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1227,7 +1235,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:63px;
+  width:60px;
   white-space:nowrap;
 }
 #u162 {
@@ -1243,8 +1251,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:53px;
-  height:18px;
+  width:55px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1252,7 +1260,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1261,11 +1269,11 @@ body {
 #u163 {
   border-width:0px;
   position:absolute;
-  left:800px;
+  left:804px;
   top:138px;
-  width:53px;
-  height:18px;
-  font-family:'';
+  width:55px;
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1276,8 +1284,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:53px;
-  height:18px;
+  width:55px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1285,7 +1293,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1298,7 +1306,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:53px;
+  width:55px;
   white-space:nowrap;
 }
 #u165_div {
@@ -1416,8 +1424,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:57px;
-  height:18px;
+  width:54px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1425,7 +1433,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1434,11 +1442,11 @@ body {
 #u170 {
   border-width:0px;
   position:absolute;
-  left:632px;
+  left:636px;
   top:170px;
-  width:57px;
-  height:18px;
-  font-family:'';
+  width:54px;
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1449,8 +1457,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:57px;
-  height:18px;
+  width:54px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1458,7 +1466,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1471,7 +1479,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:57px;
+  width:54px;
   white-space:nowrap;
 }
 #u172 {
@@ -1518,8 +1526,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:68px;
-  height:18px;
+  width:70px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1527,7 +1535,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1536,11 +1544,11 @@ body {
 #u175 {
   border-width:0px;
   position:absolute;
-  left:824px;
-  top:289px;
-  width:68px;
-  height:18px;
-  font-family:'';
+  left:823px;
+  top:284px;
+  width:70px;
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1551,8 +1559,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:68px;
-  height:18px;
+  width:70px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1560,7 +1568,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1573,7 +1581,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:68px;
+  width:70px;
   white-space:nowrap;
 }
 #u177 {
@@ -1640,8 +1648,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:94px;
-  height:18px;
+  width:91px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1649,7 +1657,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1658,11 +1666,11 @@ body {
 #u180 {
   border-width:0px;
   position:absolute;
-  left:787px;
+  left:790px;
   top:441px;
-  width:94px;
-  height:18px;
-  font-family:'';
+  width:91px;
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1673,8 +1681,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:94px;
-  height:18px;
+  width:91px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1682,7 +1690,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1695,7 +1703,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:94px;
+  width:91px;
   white-space:nowrap;
 }
 #u182 {
@@ -1742,8 +1750,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:44px;
-  height:18px;
+  width:43px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1751,7 +1759,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1762,9 +1770,9 @@ body {
   position:absolute;
   left:649px;
   top:376px;
-  width:44px;
-  height:18px;
-  font-family:'';
+  width:43px;
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1775,8 +1783,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:44px;
-  height:18px;
+  width:43px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1784,7 +1792,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1797,7 +1805,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:44px;
+  width:43px;
   white-space:nowrap;
 }
 #u187 {
@@ -1845,7 +1853,7 @@ body {
   left:0px;
   top:0px;
   width:58px;
-  height:18px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1853,7 +1861,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1862,11 +1870,11 @@ body {
 #u190 {
   border-width:0px;
   position:absolute;
-  left:454px;
-  top:269px;
+  left:464px;
+  top:268px;
   width:58px;
-  height:18px;
-  font-family:'';
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1878,7 +1886,7 @@ body {
   left:0px;
   top:0px;
   width:58px;
-  height:18px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1886,7 +1894,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1946,8 +1954,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:94px;
-  height:18px;
+  width:95px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1955,7 +1963,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1966,9 +1974,9 @@ body {
   position:absolute;
   left:445px;
   top:439px;
-  width:94px;
-  height:18px;
-  font-family:'';
+  width:95px;
+  height:23px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -1979,8 +1987,8 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:94px;
-  height:18px;
+  width:95px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -1988,7 +1996,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -2001,7 +2009,7 @@ body {
   position:absolute;
   left:0px;
   top:0px;
-  width:94px;
+  width:95px;
   white-space:nowrap;
 }
 #u197 {
@@ -2237,7 +2245,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:28px;
@@ -2247,10 +2255,10 @@ body {
   border-width:0px;
   position:absolute;
   left:93px;
-  top:11px;
+  top:5px;
   width:281px;
   height:39px;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:28px;
@@ -2270,55 +2278,55 @@ body {
   left:0px;
   top:0px;
   width:383px;
-  height:50px;
+  height:47px;
 }
 #u205-2 {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:50px;
+  top:47px;
   width:383px;
-  height:50px;
+  height:47px;
 }
 #u205-3 {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:100px;
+  top:94px;
   width:383px;
-  height:50px;
+  height:47px;
 }
 #u205-4 {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:150px;
+  top:141px;
   width:383px;
-  height:50px;
+  height:47px;
 }
 #u205-5 {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:200px;
+  top:188px;
   width:383px;
-  height:50px;
+  height:47px;
 }
 #u205-6 {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:250px;
+  top:235px;
   width:383px;
-  height:50px;
+  height:47px;
 }
 #u205-7 {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:300px;
+  top:282px;
   width:383px;
-  height:50px;
+  height:47px;
 }
 #u205 {
   border-width:0px;
@@ -2326,7 +2334,7 @@ body {
   left:0px;
   top:0px;
   width:383px;
-  height:350px;
+  height:329px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -2466,9 +2474,6 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
-  font-weight:400;
-  font-style:normal;
   color:#FFFFFF;
 }
 #u219 {
@@ -2478,9 +2483,6 @@ body {
   top:0px;
   width:394px;
   height:104px;
-  font-family:'';
-  font-weight:400;
-  font-style:normal;
   color:#FFFFFF;
 }
 #u220 {
@@ -2497,7 +2499,7 @@ body {
   left:0px;
   top:0px;
   width:276px;
-  height:21px;
+  height:23px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -2505,6 +2507,9 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  font-family:'Komika Text';
+  font-weight:400;
+  font-style:normal;
   color:#000000;
   text-align:center;
 }
@@ -2514,7 +2519,10 @@ body {
   left:79px;
   top:189px;
   width:276px;
-  height:21px;
+  height:23px;
+  font-family:'Komika Text';
+  font-weight:400;
+  font-style:normal;
   color:#000000;
   text-align:center;
 }
@@ -2786,7 +2794,7 @@ body {
   left:0px;
   top:0px;
   width:334px;
-  height:139px;
+  height:131px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -2794,7 +2802,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'';
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:25px;
@@ -2807,8 +2815,8 @@ body {
   left:53px;
   top:133px;
   width:334px;
-  height:139px;
-  font-family:'';
+  height:131px;
+  font-family:'Komika Text';
   font-weight:400;
   font-style:normal;
   font-size:25px;
@@ -2941,7 +2949,7 @@ body {
   left:0px;
   top:0px;
   width:334px;
-  height:58px;
+  height:66px;
   background:inherit;
   background-color:rgba(255, 255, 255, 0);
   border:none;
@@ -2949,6 +2957,9 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  font-family:'Komika Text';
+  font-weight:400;
+  font-style:normal;
   font-size:25px;
   color:#000000;
   text-align:center;
@@ -2959,7 +2970,10 @@ body {
   left:50px;
   top:107px;
   width:334px;
-  height:58px;
+  height:66px;
+  font-family:'Komika Text';
+  font-weight:400;
+  font-style:normal;
   font-size:25px;
   color:#000000;
   text-align:center;
