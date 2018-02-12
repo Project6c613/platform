@@ -13,6 +13,9 @@ var eventCode = document.getElementById("u273");
 var closeCreateEvent = document.getElementById("u271");
 var createButton = document.getElementById("u270");
 var editDetails = document.getElementById("u338");
+var detailsName = document.getElementById("u392_input");
+//var detailsUpload = document.getElementById("u400_input");
+//var detailsUploadP = document.getElementById("u400_input");
 var editBadge = document.getElementById("u344");
 var announcementsText = document.getElementById("u296");
 var sendAnnouncements = document.getElementById("u295");
@@ -25,17 +28,21 @@ var questionRoom = document.getElementById("u359");
 var saveQuestion = document.getElementById("u360");
 var closeAddQuestion = document.getElementById("u361");
 
+var database = firebase.database();
 
-
-function createNewEvent(eventName,eventCode,durationHr, durationMin) 
+function createNewEvent(eventName,eventCode,durationHr, durationMin)
 {
     var eventData = {
-        author: eventName,
-        code: eventCode,
-        timeInHr: durationHr,
-        timeInMin: durationMin; 
+        eventName: "Game1",
+        code: "1234",
+        timeInHr: "1",
+        timeInMin: "25";
     };
-       
+
+    database.ref("game/123456789").set({
+      eventData
+    });
+
 }
 
 createButton.onclick = function() {
@@ -43,4 +50,3 @@ createButton.onclick = function() {
     createNewEvent(eventName, eventCode, durationHr, durationMin);
     //store into the database firebase.database.ref()?
 };
-

@@ -39,3 +39,149 @@
 [info] i  hosting: Serving hosting files from: views/pages
 [info] ✔  hosting: Local server: http://localhost:5000
 
+[debug] [2018-02-11T23:22:57.985Z] ----------------------------------------------------------------------
+[debug] [2018-02-11T23:22:57.989Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-02-11T23:22:57.989Z] CLI Version:   3.17.4
+[debug] [2018-02-11T23:22:57.990Z] Platform:      linux
+[debug] [2018-02-11T23:22:57.990Z] Node Version:  v9.4.0
+[debug] [2018-02-11T23:22:57.990Z] Time:          Sun Feb 11 2018 16:22:57 GMT-0700 (DST)
+[debug] [2018-02-11T23:22:57.990Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-11T23:22:58.009Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-11T23:22:58.011Z] > authorizing via signed-in user
+[debug] [2018-02-11T23:22:58.014Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-11T23:22:58.015Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/sh98fja_pK586u4cArxBPyHcWiSuT6DdFfqQB7WTQwQ',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Feb 11 2018 16:22:58 GMT-0700 (DST)
+[debug] [2018-02-11T23:22:58.235Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-11T23:22:58.268Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 16:22:58 GMT-0700 (DST)
+[debug] [2018-02-11T23:22:58.947Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-11T23:22:58.949Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/project6c613/tokens  
+  
+ Sun Feb 11 2018 16:22:58 GMT-0700 (DST)
+[debug] [2018-02-11T23:22:59.268Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/mnt/c/Users/205rb/Documents/Capstone/platform'...
+[info] 
+[debug] [2018-02-11T23:22:59.280Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 16:22:59 GMT-0700 (DST)
+[debug] [2018-02-11T23:22:59.853Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-11T23:22:59.854Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1082078319138/clients/_:getWebAppConfig  
+  
+ Sun Feb 11 2018 16:22:59 GMT-0700 (DST)
+[debug] [2018-02-11T23:23:00.298Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: views/pages
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-02-12T00:27:12.233Z] ----------------------------------------------------------------------
+[debug] [2018-02-12T00:27:12.235Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-02-12T00:27:12.236Z] CLI Version:   3.17.4
+[debug] [2018-02-12T00:27:12.236Z] Platform:      linux
+[debug] [2018-02-12T00:27:12.236Z] Node Version:  v9.4.0
+[debug] [2018-02-12T00:27:12.236Z] Time:          Sun Feb 11 2018 17:27:12 GMT-0700 (DST)
+[debug] [2018-02-12T00:27:12.236Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-12T00:27:12.246Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-12T00:27:12.247Z] > authorizing via signed-in user
+[debug] [2018-02-12T00:27:12.249Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-12T00:27:12.249Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/sh98fja_pK586u4cArxBPyHcWiSuT6DdFfqQB7WTQwQ',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Feb 11 2018 17:27:12 GMT-0700 (DST)
+[debug] [2018-02-12T00:27:12.437Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T00:27:12.454Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 17:27:12 GMT-0700 (DST)
+[debug] [2018-02-12T00:27:12.994Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T00:27:12.994Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/project6c613/tokens  
+  
+ Sun Feb 11 2018 17:27:12 GMT-0700 (DST)
+[debug] [2018-02-12T00:27:13.422Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/mnt/c/Users/205rb/Documents/Capstone/platform'...
+[info] 
+[debug] [2018-02-12T00:27:13.429Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 17:27:13 GMT-0700 (DST)
+[debug] [2018-02-12T00:27:13.860Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T00:27:13.860Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1082078319138/clients/_:getWebAppConfig  
+  
+ Sun Feb 11 2018 17:27:13 GMT-0700 (DST)
+[debug] [2018-02-12T00:27:14.430Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: views/pages
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-02-12T00:49:18.611Z] ----------------------------------------------------------------------
+[debug] [2018-02-12T00:49:18.614Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-02-12T00:49:18.614Z] CLI Version:   3.17.4
+[debug] [2018-02-12T00:49:18.614Z] Platform:      linux
+[debug] [2018-02-12T00:49:18.614Z] Node Version:  v9.4.0
+[debug] [2018-02-12T00:49:18.614Z] Time:          Sun Feb 11 2018 17:49:18 GMT-0700 (DST)
+[debug] [2018-02-12T00:49:18.614Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-12T00:49:18.626Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-12T00:49:18.626Z] > authorizing via signed-in user
+[debug] [2018-02-12T00:49:18.628Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 17:49:18 GMT-0700 (DST)
+[debug] [2018-02-12T00:49:19.469Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T00:49:19.470Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/project6c613/tokens  
+  
+ Sun Feb 11 2018 17:49:19 GMT-0700 (DST)
+[debug] [2018-02-12T00:49:19.872Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/mnt/c/Users/205rb/Documents/Capstone/platform'...
+[info] 
+[debug] [2018-02-12T00:49:19.878Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 17:49:19 GMT-0700 (DST)
+[debug] [2018-02-12T00:49:20.365Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T00:49:20.365Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1082078319138/clients/_:getWebAppConfig  
+  
+ Sun Feb 11 2018 17:49:20 GMT-0700 (DST)
+[debug] [2018-02-12T00:49:20.893Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: views/pages
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-02-12T00:50:53.494Z] ----------------------------------------------------------------------
+[debug] [2018-02-12T00:50:53.496Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-02-12T00:50:53.496Z] CLI Version:   3.17.4
+[debug] [2018-02-12T00:50:53.496Z] Platform:      linux
+[debug] [2018-02-12T00:50:53.496Z] Node Version:  v9.4.0
+[debug] [2018-02-12T00:50:53.496Z] Time:          Sun Feb 11 2018 17:50:53 GMT-0700 (DST)
+[debug] [2018-02-12T00:50:53.497Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-12T00:50:53.506Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-12T00:50:53.506Z] > authorizing via signed-in user
+[debug] [2018-02-12T00:50:53.508Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 17:50:53 GMT-0700 (DST)
+[debug] [2018-02-12T00:50:54.079Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T00:50:54.080Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/project6c613/tokens  
+  
+ Sun Feb 11 2018 17:50:54 GMT-0700 (DST)
+[debug] [2018-02-12T00:50:54.429Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/mnt/c/Users/205rb/Documents/Capstone/platform'...
+[info] 
+[debug] [2018-02-12T00:50:54.435Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/project6c613  
+  
+ Sun Feb 11 2018 17:50:54 GMT-0700 (DST)
+[debug] [2018-02-12T00:50:54.877Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-12T00:50:54.877Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1082078319138/clients/_:getWebAppConfig  
+  
+ Sun Feb 11 2018 17:50:54 GMT-0700 (DST)
+[debug] [2018-02-12T00:50:55.363Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: views/pages
+[info] ✔  hosting: Local server: http://localhost:5000
+
