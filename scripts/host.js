@@ -43,4 +43,49 @@ createButton.onclick = function() {
     createNewEvent(eventName, eventCode, durationHr, durationMin);
     //store into the database firebase.database.ref()?
 };
+function createBadge(badgeName, badgeImage)
+{
+    var badgeData = {
+        bName : badgeName,
+        image : badgeImage;
+    }
+
+};
+editBadge.onclick = function(){
+    createBadge(badgeName, badgeImage);
+};
+
+function announcements(annoucementsText)
+{
+    var newAnnouncement = {
+        announcement:annoucementsText;
+    };
+}
+
+sendAnnouncements.onclick = function(){
+    annoucements(annoucementsText);
+};
+
+
+
+
+function addQuestion(questionName, questionDescription,questionDifficultyLevel,questionRoom)
+{
+    var newQuestion = {
+        name : questionName,
+        description: questionDescription,
+        level: questionDifficultyLevel,
+        room: questionRoom;
+    };
+    
+}
+
+saveQuestion.onclick = function(){
+var question = ref.child("question");
+addQuestion(questionName, questionDescription,questionDifficultyLevel,questionRoom);
+};
+
+goLive.onclick = function() {
+    //store in the database and somehow send info to the player side to have the plaer's page change from waiting //screen to the game screen
+};
 
