@@ -18,7 +18,7 @@
 		passwordInput - u52_input
 */
 
-var loginButton = document.getElementById('cache1');
+var loginButton, participantButton = document.getElementById('u6');
 var loginParticipant = document.getElementById('u16');
 var loginHost = document.getElementById('u18');
 var loginUserNameInput = document.getElementById('u38_input');
@@ -72,12 +72,17 @@ function updateEvent(eventKey, eventName,eventCode,durationHr, durationMin)
 window.onload = function(){
   console.log("Home screen loaded");
   // Bind Sign in button.
-  loginButton = document.getElementById('cache1');
-  loginButton.addEventListener('click', function() {
-    console.log("ye")
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
-  });
+  loginButton = document.getElementById('u6');
+  loginButton.onclick = function() {
+    console.log("ye");
+    participantButton = document.getElementById('cache1');
+  };
+
+  participantButton.onclick = function() {
+    console.log("Almost there");
+    // var provider = new firebase.auth.GoogleAuthProvider();
+    // firebase.auth().signInWithPopup(provider);
+  }
 
   // // Bind Sign out button.
   // signOutButton.addEventListener('click', function() {

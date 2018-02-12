@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style> 
+    <style>
         @font-face {
             font-family: "Komika Text";
             src: url("komika.ttf");
@@ -21,10 +21,12 @@
     <link href="files/host_view/styles.css" type="text/css" rel="stylesheet"/>
     <link href="" type="text/css" rel="stylesheet"/>
     <link href="" type="text/css" rel="stylesheet"/>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src="resources/scripts/jquery-1.7.1.min.js"></script>
     <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
     <script src="resources/scripts/prototypePre.js"></script>
     <script src="data/document.js"></script>
+    <script src="data/host.js"></script>
     <script src="resources/scripts/prototypePost.js"></script>
     <script src="files/host_view/data.js"></script>
     <script type="text/javascript">
@@ -200,8 +202,7 @@
             <!-- hour (Droplist) -->
             <div id="u283" class="ax_default droplist" data-label="hour">
               <select id="u283_input">
-                <option value=" ">&nbsp;</option>
-                <option value="1">1</option>
+                <option value="1" selected>1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -230,8 +231,7 @@
             <!-- minute (Droplist) -->
             <div id="u288" class="ax_default droplist" data-label="minute">
               <select id="u288_input">
-                <option value=" ">&nbsp;</option>
-                <option value="00">00</option>
+                <option value="00" selected >00</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>

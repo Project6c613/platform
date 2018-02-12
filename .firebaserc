@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "project6c613"
+    "default": "project6c613",
+    "6c613": "project6c613",
+    "staging": "project6c613"
   }
 }
