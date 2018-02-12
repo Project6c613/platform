@@ -24,3 +24,23 @@ var questionDifficultyLevel = document.getElementById("u363");
 var questionRoom = document.getElementById("u359");
 var saveQuestion = document.getElementById("u360");
 var closeAddQuestion = document.getElementById("u361");
+
+
+
+function createNewEvent(eventName,eventCode,durationHr, durationMin) 
+{
+    var eventData = {
+        author: eventName,
+        code: eventCode,
+        timeInHr: durationHr,
+        timeInMin: durationMin; 
+    };
+       
+}
+
+createButton.onclick = function() {
+    var events = ref.child("eventCode");
+    createNewEvent(eventName, eventCode, durationHr, durationMin);
+    //store into the database firebase.database.ref()?
+};
+
