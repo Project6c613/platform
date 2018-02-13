@@ -185,7 +185,7 @@ window.onload = function(){
     console.log(questionDifficultyLevel.value);
     console.log(questionRoom.value);
 
-    //createQuestion(globalEventKey, questionName.value, questionDescription.value,questionDifficultyLevel.value,questionRoom.value)
+    createQuestion(globalEventKey, questionName.value, questionDescription.value,questionDifficultyLevel.value,questionRoom.value)
   }
 
   editQuestionButton.onclick = function () {
