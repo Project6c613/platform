@@ -72,7 +72,7 @@ function createBadge(eventKey, badgeName, badgeImage)
 {
     var badgeData = {
         bName : badgeName,
-        image : badgeImage,
+        image : badgeImageUrl,
     };
 
     var updates = {};
@@ -83,8 +83,9 @@ function createBadge(eventKey, badgeName, badgeImage)
 
 function createAnnouncement(eventKey, annoucementsText)
 {
-    var announcmentID = firebase.database().ref().child('announcments').push().key;
-    return firebase.database().ref('events/' + eventKey + '/announcements' + announcementID).set({
+    var announcementID = firebase.database().ref().child('announcments').push().key;
+    return firebase.database().ref('/events/' + eventKey + '/announcements/' + announcementID).set({
+        announcmentID: announcementID,
         announcement:annoucementsText,
     });
 
@@ -96,7 +97,10 @@ function createAnnouncement(eventKey, annoucementsText)
 
 function createQuestion(eventKey, questionName, questionDescription, questionAnswer, questionDifficultyLevel,questionRoom)
 {
+    var questionID = firebase.database().ref().child('question').push().key;
+
     var newQuestion = {
+        id: questionID,
         name : questionName,
         description: questionDescription,
         answer: question,
@@ -105,12 +109,14 @@ function createQuestion(eventKey, questionName, questionDescription, questionAns
     };
 
     var updates = {};
-    updates['/events/' + eventKey + '/' + questionRoom + '/questions'] = newQuestion;
+    updates['/events/' + eventKey + '/' + questionRoom + '/questions/' + questionID] = newQuestion;
 
     return firebase.database().ref().update(updates);
 }
 
 window.onload = function(){
+
+
   console.log("Host View Has Loaded");
   createNewEventButton = document.getElementById('u261');
   createButton = document.getElementById("u273");

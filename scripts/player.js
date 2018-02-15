@@ -100,5 +100,3 @@ userProfile.onclick = function()
 	//fill user info
 
 }
-
-
