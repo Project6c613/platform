@@ -3,20 +3,14 @@ var editDetailsButton, saveEditDetailsButton;
 var createBadgeButton, saveBadgeButton, badgeName, badgeImage;
 var announcementButton, announcementTextArea, sendAnnouncementButton;
 var createQuestionButton, addQuestionButton, editQuestionButton, questionName, questionDifficultyLevel, questionRoom;
-var globalEventKey;
+var globalEventKey
+var profilePicture, profileName;
 
-/*** ToDo
+/**Notes
+- If push successful
 
-Need To Do!
-- Be able to push more than one announcment
-- Get Questions to send to database (null error keeps occuring in document.getElementById)
+**/
 
-
-If Time Permits
-- Remove Config Variables from sight
-- Figure out images in badges
-
-***/
 
 var config = {
   apiKey: "AIzaSyAtlo66pxNfHMxMVwL7MXNkblK1lanJgk4",
@@ -68,7 +62,7 @@ function updateEvent(eventKey, eventName,eventCode,durationHr, durationMin)
     return firebase.database().ref().update(updates);
 };
 
-function createBadge(eventKey, badgeName, badgeImage)
+function createBadge(eventKey, badgeName, badgeImageUrl)
 {
     var badgeData = {
         bName : badgeName,
@@ -97,13 +91,13 @@ function createAnnouncement(eventKey, annoucementsText)
 
 function createQuestion(eventKey, questionName, questionDescription, questionAnswer, questionDifficultyLevel,questionRoom)
 {
-    var questionID = firebase.database().ref().child('question').push().key;
+    var questionID = firebase.database().ref().child('questions').push().key;
 
     var newQuestion = {
         id: questionID,
         name : questionName,
         description: questionDescription,
-        answer: question,
+        answer: questionAnswer,
         level: questionDifficultyLevel,
         room: questionRoom,
     };
@@ -116,31 +110,34 @@ function createQuestion(eventKey, questionName, questionDescription, questionAns
 
 window.onload = function(){
 
-
   console.log("Host View Has Loaded");
-  createNewEventButton = document.getElementById('u261');
-  createButton = document.getElementById("u273");
 
-  editDetailsButton = document.getElementById('u359');
-  saveEditDetailsButton = document.getElementById('u321');
+  profilePicture = document.getElementById('u249_img');
+  profileName = document.getElementById('u253_div');
 
-  createBadgeButton = document.getElementById('u337');
-  saveBadgeButton = document.getElementById('u403');
+  createNewEventButton = document.getElementById('u259');
+  createButton = document.getElementById("u271");
 
-  announcementButton = document.getElementById('u265');
-  sendAnnouncementButton = document.getElementById('u430');
+  editDetailsButton = document.getElementById('u357');
+  saveEditDetailsButton = document.getElementById('u319');
 
-  createQuestionButton = document.getElementById('u344');
-  addQuestionButton = document.getElementById('u367');
-  editQuestionButton = document.getElementById('u392');
+  createBadgeButton = document.getElementById('u335');
+  saveBadgeButton = document.getElementById('u401');
+
+  announcementButton = document.getElementById('u263');
+  sendAnnouncementButton = document.getElementById('u427');
+
+  addQuestionButton = document.getElementById('u342');
+  saveQuestionButton = document.getElementById('u365');
+  // editSaveQuestionButton = document.getElementById('u392');
 
   createNewEventButton.onclick = function() {
     console.log(createNewEventButton);
-    eventName = document.getElementById("u272_input");
-    eventCode = document.getElementById("u276_input");
+    eventName = document.getElementById("u270_input");
+    eventCode = document.getElementById("u274_input");
     //Bug -- results to default 1:00
-    durationHr = document.getElementById("u283_input");
-    durationMin = document.getElementById("u288_input");
+    durationHr = document.getElementById("u281_input");
+    durationMin = document.getElementById("u286_input");
   }
 
   createButton.onclick = function() {
@@ -148,11 +145,11 @@ window.onload = function(){
   };
 
   editDetailsButton.onclick = function() {
-    eventName = document.getElementById("u320_input");
-    eventCode = document.getElementById("u319_input");
+    eventName = document.getElementById("u318_input");
+    eventCode = document.getElementById("u328_input");
     //Bug -- results to default 1:00
-    durationHr = document.getElementById("u330_input");
-    durationMin = document.getElementById("u335_input");
+    durationHr = document.getElementById("u333_input");
+    durationMin = document.getElementById("u317_input");
   }
 
   saveEditDetailsButton.onclick = function() {
@@ -160,46 +157,49 @@ window.onload = function(){
   }
 
   createBadgeButton.onclick = function () {
-    badgeName = document.getElementById("u404_input");
-    badgeImage = "Image Holder";
+    badgeName = document.getElementById("u402_input");
+    badgeImage = document.getElementById("u409_input");
   }
 
   saveBadgeButton.onclick = function () {
-    createBadge(globalEventKey, badgeName.value, badgeImage);
+    createBadge(globalEventKey, badgeName.value, badgeImage.value);
   }
 
   announcementButton.onclick = function () {
-    announcementTextArea = document.getElementById("u435_input");
+    announcementTextArea = document.getElementById("u432_input");
   }
 
   sendAnnouncementButton.onclick = function () {
     createAnnouncement(globalEventKey, announcementTextArea.value);
   }
 
-  createQuestionButton.onclick = function () {
-    questionName = document.getElementById("u365_input");
-    questionDescription = document.getElementById("u389_input");
-    questionAnswer = document.getElementById("u395_input");
-    questionDifficultyLevel = document.getElementById("u370_input");
-    questionRoom = document.getElementById("u366_input");
-  }
-
   addQuestionButton.onclick = function () {
+    questionName = document.getElementById("u363_input");
+    questionDescription = document.getElementById("u387_input");
+    questionAnswer = document.getElementById("u393_input");
+    questionDifficultyLevel = document.getElementById("u368_input");
+    questionRoom = document.getElementById("u364_input");
+  }
+
+  saveQuestionButton.onclick = function () {
     console.log(questionName.value);
     console.log(questionDescription.value);
     console.log(questionAnswer.value);
     console.log(questionDifficultyLevel.value);
     console.log(questionRoom.value);
 
-    createQuestion(globalEventKey, questionName.value, questionDescription.value,questionDifficultyLevel.value,questionRoom.value)
+    createQuestion(globalEventKey, questionName.value, questionDescription.value , questionAnswer.value , questionDifficultyLevel.value , questionRoom.value)
+
+    editQuestionButton.onclick = function () {
+      console.log(questionName.value);
+      console.log(questionDescription.value);
+      console.log(questionAnswer.value);
+      console.log(questionDifficultyLevel.value);
+      console.log(questionRoom.value);
+    }
+
   }
 
-  editQuestionButton.onclick = function () {
-    console.log(questionName.value);
-    console.log(questionDescription.value);
-    console.log(questionAnswer.value);
-    console.log(questionDifficultyLevel.value);
-    console.log(questionRoom.value);
-  }
+
 
 }

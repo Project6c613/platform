@@ -15,6 +15,7 @@ var signDOBYearInput = document.getElementById('u72_input');
 var signGenderInput = document.getElementById('u70_input');
 var signUserNameInput = document.getElementById('u69_input');
 var signPasswordInput = document.getElementById('u52_input');
+var signInWithGoogle;
 
 var participant = false;
 var host = false;
@@ -80,9 +81,11 @@ function onAuthStateChanged(user) {
     //splashPage.style.display = 'none';
     if(participant){
       writeParticipantData(user.uid, user.displayName, user.email, user.photoURL);
+      window.location.href = "player_view.html"
     }
     else if(host) {
       writeHostData(user.uid, user.displayName, user.email, user.photoURL);
+      window.location.href = "host_view.html"
     }
   } else {
     // Set currentUID to null.
@@ -113,27 +116,38 @@ window.onload = function(){
 
   console.log("Home screen loaded");
   // Bind Sign in button.
-  loginButton = document.getElementById('u6');
+  loginButton = document.getElementById('u4');
   loginButton.onclick = function(){
     console.log("Login Button Clicked");
-    loginParticipant = document.getElementById('u16');
-    loginHost = document.getElementById('u18');
+    loginParticipant = document.getElementById('u11');
+    loginHost = document.getElementById('u13');
 
     loginParticipant.onclick = function() {
       participant = true;
       host = false;
       console.log("participant logging in");
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider);
+      signInWithGoogle = document.getElementById("u41");
+
+      signInWithGoogle.onclick = function() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider);
+      };
+
     };
 
     loginHost.onclick = function() {
       participant = false;
       host = true;
       console.log("host");
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider);
+      signInWithGoogle = document.getElementById("u41");
+
+      signInWithGoogle.onclick = function() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider);
+      };
     };
+
+
   };
 
   // // Bind Sign out button.
