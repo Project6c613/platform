@@ -11,7 +11,14 @@ var profilePicture, profileName;
 
 **/
 
-
+// javascript:(function() {
+//   $axure('@eventsrepeater').addRepeaterData([
+//     {
+//       name: {type: 'text', text: 'World'},
+//       code: {type: 'text', text: 'Low'}
+//     }
+//   ]).refreshRepeater();
+// })();
 var config = {
   apiKey: "AIzaSyAtlo66pxNfHMxMVwL7MXNkblK1lanJgk4",
   authDomain: "project6c613.firebaseapp.com",

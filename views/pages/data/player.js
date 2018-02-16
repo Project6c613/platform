@@ -56,6 +56,14 @@ submitButton.onclick = function(room, question, submitAnswerInput)
 
 }*/
 
+javascript:(function() {
+  $axure('@questionsrepeater').addRepeaterData([
+    {
+      Name: {type: 'text', text: 'World'},
+      isSolved: {type: 'text', text: 'false'}
+    }
+  ]).refreshRepeater();
+})();
 
 window.onload = function(){
 
