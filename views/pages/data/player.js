@@ -66,15 +66,14 @@ window.onload = function(){
     var question = firebase.database().ref('/question/');
     var questionId = firebase.database().ref('/events/eventKey/Bedroom/questions/');
     questionId.child("questions").once('value', getQuestionData);
-    console.log(questionId.values)
     function getQuestionData(snapshot)
     {
-      snapshot.forEach(userSnapshot => {
-        var k = userSnapshot.key;
+      console.log("poopppp");
+      snapshot.forEach(function(child) {
+        console.log(child.val());
         var id = userSnapshot.val().answer;
         var description = userSnapshot.val().description;
-        console.log(description.value)
-        console.log(id.value)
+        console.log(id + "poop" + description);
       });
     }
     /* questionId.on('value', function(snapshot){
