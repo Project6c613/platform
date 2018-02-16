@@ -31,8 +31,8 @@ var foyerRoom = document.getElementById('u183');
 var kitchenRoom = document.getElementById('u188');
 var diningRoom = document.getElementById('u193');
 var userProfile = document.getElementById('u110');
-var submitAnswerInput = document.getElementById('u225_input')
-var submitButton = document.getElementById('u226')
+var submitAnswerInput = document.getElementById('u225_input');
+var submitButton = document.getElementById('u226');
 
 //keep track of total number of keys
 /*
@@ -63,13 +63,25 @@ window.onload = function(){
   console.log("Player View Has Loaded");
   theaterRoom.onclick = function()
   {
-    var question = firebase.database().ref('/question/')
+    var question = firebase.database().ref('/question/');
     var questionId = firebase.database().ref('/events/eventKey/Bedroom/questions/');
-    questionId.on('value', function(snapshot){
+    questionId.child("questions").once('value', getQuestionData);
+    console.log(questionId.values)
+    function getQuestionData(snapshot)
+    {
+      snapshot.forEach(userSnapshot => {
+        var k = userSnapshot.key;
+        var id = userSnapshot.val().answer;
+        var description = userSnapshot.val().description;
+        console.log(description.value)
+        console.log(id.value)
+      });
+    }
+    /* questionId.on('value', function(snapshot){
       console.log(snapshot.val());
       console.log(snapshot.val().answer);
     //  console.log(questionId.value);
-    });
+  });*/
   	//load questions for theater room
   	//id - u204_state0 will get filled with the theater questions
 
