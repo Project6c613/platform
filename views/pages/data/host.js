@@ -111,7 +111,7 @@ function createQuestion(eventKey, questionName, questionDescription, questionAns
 window.onload = function(){
 
   console.log("Host View Has Loaded");
-
+  //createQuestion("eventKey", "Question 7", "Question Description 7" , "How are you?", "Easy" , "Theater");
   profilePicture = document.getElementById('u249_img');
   profileName = document.getElementById('u253_div');
 
@@ -188,8 +188,8 @@ window.onload = function(){
     console.log(questionDifficultyLevel.value);
     console.log(questionRoom.value);
 
-    createQuestion(globalEventKey, questionName.value, questionDescription.value , questionAnswer.value , questionDifficultyLevel.value , questionRoom.value)
 
+  //  createQuestion(globalEventKey, questionName.value, questionDescription.value , questionAnswer.value , questionDifficultyLevel.value , questionRoom.value)
     editQuestionButton.onclick = function () {
       console.log(questionName.value);
       console.log(questionDescription.value);
