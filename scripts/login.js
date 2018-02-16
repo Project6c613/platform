@@ -18,7 +18,7 @@
 		passwordInput - u52_input
 */
 
-var loginButton = document.getElementById('u6');
+var loginButton = document.getElementById('cache1');
 var loginParticipant = document.getElementById('u16');
 var loginHost = document.getElementById('u18');
 var loginUserNameInput = document.getElementById('u38_input');
@@ -35,3 +35,74 @@ var signDOBYearInput = document.getElementById('u72_input');
 var signGenderInput = document.getElementById('u70_input');
 var signUserNameInput = document.getElementById('u69_input');
 var signPasswordInput = document.getElementById('u52_input');
+
+var config = {
+  apiKey: "AIzaSyAtlo66pxNfHMxMVwL7MXNkblK1lanJgk4",
+  authDomain: "project6c613.firebaseapp.com",
+  databaseURL: "https://project6c613.firebaseio.com",
+  projectId: "project6c613",
+  storageBucket: "project6c613.appspot.com",
+  messagingSenderId: "1082078319138"
+};
+
+
+
+/**
+ * The ID of the currently signed-in User. We keep track of this to detect Auth state change events that are just
+ * programmatic token refresh but not a User status change.
+ */
+var currentUID;
+
+firebase.initializeApp(config);
+
+function createParticipantUser(eventKey, eventName,eventCode,durationHr, durationMin)
+{
+    var eventData = {
+        eventID: eventKey,
+        name: eventName,
+        code: eventCode,
+        timeInHr: durationHr,
+        timeInMin: durationMin,
+    };
+
+    var updates = {};
+    updates['/events/' + eventKey + '/details'] = eventData;
+
+    return firebase.database().ref().update(updates);
+};
+
+function updateEvent(eventKey, eventName,eventCode,durationHr, durationMin)
+{
+    var eventData = {
+        eventID: eventKey,
+        name: eventName,
+        code: eventCode,
+        timeInHr: durationHr,
+        timeInMin: durationMin,
+    };
+
+    var updates = {};
+    updates['/events/' + eventKey + '/details'] = eventData;
+
+    return firebase.database().ref().update(updates);
+};
+
+window.onload = function(){
+  console.log("Home screen loaded");
+  // Bind Sign in button.
+  loginButton = document.getElementById('cache1');
+  loginButton.onclick = function(){
+    console.log("yeeeeeee");
+    console.log("ye1");
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
+  };
+
+  // // Bind Sign out button.
+  // signOutButton.addEventListener('click', function() {
+  //   firebase.auth().signOut();
+  // });
+
+  // Listen for auth state changes
+  firebase.auth().onAuthStateChanged(onAuthStateChanged);
+}
