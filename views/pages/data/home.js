@@ -49,6 +49,7 @@ function writeParticipantData(userId, name, email, imageUrl) {
     email: email,
     profile_picture : imageUrl,
     participantOrHost: "participant",
+    userScore: 0,
   });
 }
 // [END basic_write]
@@ -80,12 +81,12 @@ function onAuthStateChanged(user) {
     currentUID = user.uid;
     //splashPage.style.display = 'none';
     if(participant){
-      writeParticipantData(user.uid, user.displayName, user.email, user.photoURL);
-      window.location.href = "player_view.html"
+      //writeParticipantData(user.uid, user.displayName, user.email, user.photoURL);
+      window.location.href = "facebookworkshop.html"
     }
     else if(host) {
       writeHostData(user.uid, user.displayName, user.email, user.photoURL);
-      window.location.href = "host_view.html"
+      //window.location.href = "host_view.html"
     }
   } else {
     // Set currentUID to null.
