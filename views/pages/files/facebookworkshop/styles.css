@@ -3273,10 +3273,10 @@
 #u423 {
   border-width:0px;
   position:absolute;
-  left:234px;
-  top:234px;
+  left:1020px;
+  top:237px;
   width:213px;
-  height:310px;
+  height:320px;
   overflow:hidden;
   visibility:hidden;
 }
@@ -3286,7 +3286,7 @@
   left:0px;
   top:0px;
   width:213px;
-  height:310px;
+  height:320px;
   overflow:auto;
   -webkit-overflow-scrolling:touch;
   -ms-overflow-x:hidden;
