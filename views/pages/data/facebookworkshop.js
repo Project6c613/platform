@@ -83,43 +83,16 @@ function updateLeaderboard(){
   }
 }
 
-function updateUserScore(userscore)
-{
+
+function updateUserScore(scoreToAdd) {
   user = firebase.auth().currentUser;
-  var users = firebase.database().ref('/users/');
-  oldScore, newScore = 0;
-  console.log("Participant Data: " + users.child("participants"));
-  users.child("participants").once('value', getUserScore);
-
-  function getUserScore(snapshot)
-  {
-    console.log(snapshot.val());
-    snapshot.forEach(userSnapshot => {
-       oldScore = userSnapshot.val().userScore;
-    });
-  console.log(userscore);
-  console.log(oldScore);
-  console.log(newScore);
-
-  newScore = (oldScore + userscore);
-    var userData = {
-      username: user.displayName,
-      email: user.email,
-      profile_picture : user.photoURL,
-      participantOrHost: "participant",
-      userScore: newScore,
-    };
-
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    var updates = {};
-    updates['/users/participants/' + user.uid] = userData;
-
-    return firebase.database().ref().update(updates);
-
-    }
-};
-
-
+  // Increment Ada's rank by 1.
+  var userScoreRef = firebase.database().ref('users/participants/' + user.uid +'/userScore' );
+  userScoreRef.transaction(function(currentScore) {
+    // If users/participant/uid/userScore has never been set, currentScore will be `null`.
+    return currentScore + scoreToAdd;
+  });
+}
 
 $(document).ready(function() {
     console.log( "Begin Ready!" );
