@@ -61,45 +61,6 @@ function addToLeaderboardDatabase() {
 /**
  * Starts listening for new posts and populates posts lists.
  */
-function startDatabaseQueries() {
-  // [START my_top_posts_query]
-  var myUserId = firebase.auth().currentUser.uid;
-  var topParticipantsRef = firebase.database().ref('/leaderboard/' + myUserId).orderByChild('userScore');
-  // [END my_top_posts_query]
-
-  var fetchPosts = function(postsRef, sectionElement) {
-    postsRef.on('child_added', function(data) {
-      var author = data.val().author || 'Anonymous';
-      var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
-      containerElement.insertBefore(
-          createPostElement(data.key, data.val().title, data.val().body, author, data.val().uid, data.val().authorPic),
-          containerElement.firstChild);
-    });
-    postsRef.on('child_changed', function(data) {
-		var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
-		var postElement = containerElement.getElementsByClassName('post-' + data.key)[0];
-		postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = data.val().title;
-		postElement.getElementsByClassName('username')[0].innerText = data.val().author;
-		postElement.getElementsByClassName('text')[0].innerText = data.val().body;
-		postElement.getElementsByClassName('star-count')[0].innerText = data.val().starCount;
-    });
-    postsRef.on('child_removed', function(data) {
-		var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
-		var post = containerElement.getElementsByClassName('post-' + data.key)[0];
-	    post.parentElement.removeChild(post);
-    });
-  };
-
-  // Fetching and displaying all posts of each sections.
-  fetchPosts(topUserPostsRef, topUserPostsSection);
-  fetchPosts(recentPostsRef, recentPostsSection);
-  fetchPosts(userPostsRef, userPostsSection);
-
-  // Keep track of all Firebase refs we are listening to.
-  listeningFirebaseRefs.push(topUserPostsRef);
-  listeningFirebaseRefs.push(recentPostsRef);
-  listeningFirebaseRefs.push(userPostsRef);
-}
 
 function updateLeaderboard(){
   //Leaderboard
@@ -177,17 +138,14 @@ $(document).ready(function() {
            if($axure.getGlobalVariable('currentDifficulty') == "Easy"){
              console.log("5 points added");
              updateUserScore(5);
-             setTimeout(function(){ updateLeaderboard(); }, 5000);
            }
              else if($axure.getGlobalVariable('currentDifficulty') == "Medium"){
               console.log("10 points added");
                updateUserScore(10);
-              setTimeout(function(){ updateLeaderboard(); }, 5000);
              }
              else if($axure.getGlobalVariable('currentDifficulty') == "Hard"){
                console.log("20 points added");
                updateUserScore(20);
-               setTimeout(function(){ updateLeaderboard(); }, 5000);
              }
            }
            profileButton = document.getElementById('u279');
