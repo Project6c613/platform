@@ -84,6 +84,7 @@ function writeHostData(userId, name, email, imageUrl) {
 function onAuthStateChanged(user) {
   // We ignore token refresh events.
   if (user && currentUID === user.uid) {
+    setTimeout(function(){ window.location.href = "facebookworkshop.html"; }, 2000);
     return;
   }
 
@@ -101,8 +102,6 @@ function onAuthStateChanged(user) {
   } else {
     // Set currentUID to null.
     currentUID = null;
-    // Display the splash page where you can sign-in.
-    //splashPage.style.display = '';
   }
 }
 
@@ -157,13 +156,6 @@ window.onload = function(){
       }
     }
   }
-  // // Bind Sign out button.
-  // signOutButton.addEventListener('click', function() {
-  //   firebase.auth().signOut();
-  // });
-
-  // Listen for auth state changes
-  //firebase.auth().onAuthStateChanged(onAuthStateChanged);
 
   // Listen for auth state changes
   firebase.auth().onAuthStateChanged(onAuthStateChanged);

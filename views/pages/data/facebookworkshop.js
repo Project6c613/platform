@@ -1,6 +1,9 @@
-var user, profilePicture, profileName;
+var user, profilePicture, profileName, profileButton, pictureInProfile, nameInProfile;
 var beginButton, correctButton;
 var oldScore, newScore;
+var signOutButton;
+var currentUID;
+var nameString;
 
 var config = {
   apiKey: "AIzaSyAtlo66pxNfHMxMVwL7MXNkblK1lanJgk4",
@@ -14,61 +17,89 @@ var config = {
 firebase.initializeApp(config);
 
 
-// function onAuthStateChanged(user) {
-//
-//   if (user) {
-//     currentUID = user.uid;
-//     console.log(user.displayName);
-//
-//   } else {
-//     // Set currentUID to null.
-//     currentUID = null;
-//     // Display the splash page where you can sign-in.
-//     //splashPage.style.display = '';
-//   }
-// }
+function onAuthStateChanged(user) {
+  // We ignore token refresh events.
+  if (user && currentUID === user.uid) {
+    return;
+  }
 
-// $axure('@leaderboardrepeater').refreshRepeater();
-//
-// $axure('@leaderboardrepeater').updateRepeaterData('marked', {
-//   score: {type: 'text', text: '12'}
-// })
-//
-// javascript:(function() {
-//   $axure('@leaderboardrepeater').addRepeaterData([
-//     {
-//       username: {type: 'text', text: firebase.auth().currentUser.displayName},
-//       score: {type: 'text', text: score.toString()},
-//     }
-//   ]).refreshRepeater();
-// })();
-//
-// javascript:(function() { $axure('@leaderboardrepeater').refreshRepeater(); }
-//
-// function addToLeaderboard() {
-// javascript:(function() {
-//   $axure('@leaderboardrepeater').updateRepeaterData(([
-//     {
-//         score: {type: 'text', text: '12'}
-//     }
-//
-//   ]).refreshRepeater();
-// });
-// }
-//
-// javascript:(function() {
-//   // Update rows in repater Target
-//   var target = $axure('@Target');
-//   var rows = $axure('@Target').getRepeaterRows();
-//   if (rows.length > 1) {
-//     var row = {name: {type: 'text', text: 'Edited...'}};
-//     target.updateRepeaterData([rows[0], rows[1]], row).refreshRepeater();
-//   }
-// })();
+  if (user) {
+    currentUID = user.uid;
+    console.log(currentUID);
+  } else {
+    // Set currentUID to null.
+    currentUID = null;
+    setTimeout(function(){ window.location.href = "index.html"; }, 2000);
+  }
+}
 
-// $axure('@widget').updateRepeaterData('marked', {
-//   valueName: {type: 'text', text: 'Hello World'}
-// });
+function addToLeaderboardDatabase() {
+  user = firebase.auth().currentUser;
+  var users = firebase.database().ref('/users/');
+  users.child("participants").once('value', getUserScore);
+  function getUserScore(snapshot)
+  {
+    console.log(snapshot.val());
+    snapshot.forEach(userSnapshot => {
+       name = userSnapshot.val().username;
+       score = userSnapshot.val().userScore;
+    });
+    var leaderboardData = {
+      username: name,
+      userScore: score,
+    };
+  }
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/leaderboard/' + user.uid] = leaderboardData;
+
+  return firebase.database().ref().update(updates);
+
+}
+
+/**
+ * Starts listening for new posts and populates posts lists.
+ */
+function startDatabaseQueries() {
+  // [START my_top_posts_query]
+  var myUserId = firebase.auth().currentUser.uid;
+  var topParticipantsRef = firebase.database().ref('/leaderboard/' + myUserId).orderByChild('userScore');
+  // [END my_top_posts_query]
+
+  var fetchPosts = function(postsRef, sectionElement) {
+    postsRef.on('child_added', function(data) {
+      var author = data.val().author || 'Anonymous';
+      var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
+      containerElement.insertBefore(
+          createPostElement(data.key, data.val().title, data.val().body, author, data.val().uid, data.val().authorPic),
+          containerElement.firstChild);
+    });
+    postsRef.on('child_changed', function(data) {
+		var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
+		var postElement = containerElement.getElementsByClassName('post-' + data.key)[0];
+		postElement.getElementsByClassName('mdl-card__title-text')[0].innerText = data.val().title;
+		postElement.getElementsByClassName('username')[0].innerText = data.val().author;
+		postElement.getElementsByClassName('text')[0].innerText = data.val().body;
+		postElement.getElementsByClassName('star-count')[0].innerText = data.val().starCount;
+    });
+    postsRef.on('child_removed', function(data) {
+		var containerElement = sectionElement.getElementsByClassName('posts-container')[0];
+		var post = containerElement.getElementsByClassName('post-' + data.key)[0];
+	    post.parentElement.removeChild(post);
+    });
+  };
+
+  // Fetching and displaying all posts of each sections.
+  fetchPosts(topUserPostsRef, topUserPostsSection);
+  fetchPosts(recentPostsRef, recentPostsSection);
+  fetchPosts(userPostsRef, userPostsSection);
+
+  // Keep track of all Firebase refs we are listening to.
+  listeningFirebaseRefs.push(topUserPostsRef);
+  listeningFirebaseRefs.push(recentPostsRef);
+  listeningFirebaseRefs.push(userPostsRef);
+}
 
 function updateLeaderboard(){
   //Leaderboard
@@ -120,7 +151,7 @@ function updateUserScore(userscore)
 
     // Write the new post's data simultaneously in the posts list and the user's post list.
     var updates = {};
-    updates['users/participants/' + user.uid] = userData;
+    updates['/users/participants/' + user.uid] = userData;
 
     return firebase.database().ref().update(updates);
 
@@ -159,8 +190,25 @@ $(document).ready(function() {
                setTimeout(function(){ updateLeaderboard(); }, 5000);
              }
            }
-        });
+           profileButton = document.getElementById('u279');
+           profileButton.onclick = function () {
+             console.log("Profile Clicked");
+             $(document).ready(function() {
 
+               pictureInProfile = document.getElementById('u288_img');
+               pictureInProfile.src = firebase.auth().currentUser.photoURL;
+               nameInProfile = document.getElementById('u290');
+               nameString = firebase.auth().currentUser.displayName;
+               nameString = nameString.split(/\s(.+)/)[0];
+               nameInProfile.innerHTML = nameString;
+
+               signOutButton = document.getElementById('u302');
+               signOutButton.onclick = function() {
+                 firebase.auth().signOut();
+               }
+             });
+           }
+        });
      }
-    // firebase.auth().onAuthStateChanged(onAuthStateChanged);
+   firebase.auth().onAuthStateChanged(onAuthStateChanged);
 });
