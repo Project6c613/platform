@@ -144,17 +144,17 @@ window.onload = function(){
       }
     }
 
-    loginHost.onclick = function() {
-      participant = false;
-      host = true;
-      console.log("host");
-      signInWithGoogle = document.getElementById("u41");
-
-      signInWithGoogle.onclick = function() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider);
-      }
-    }
+    // loginHost.onclick = function() {
+    //   participant = false;
+    //   host = true;
+    //   console.log("host");
+    //   signInWithGoogle = document.getElementById("u41");
+    //
+    //   signInWithGoogle.onclick = function() {
+    //     var provider = new firebase.auth.GoogleAuthProvider();
+    //     firebase.auth().signInWithPopup(provider);
+    //   }
+    // }
   }
 
   // Listen for auth state changes

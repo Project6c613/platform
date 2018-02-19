@@ -23,16 +23,16 @@ function databaseQueries() {
 
   var fetchUpdates = function(postsRef) {
     postsRef.on('child_added', function(data) {
-      console.log("Child Added");
-      console.log("Data Key " + data.key);
-      console.log("Data Username " + data.val().username);
-      console.log("Data Score " + data.val().userScore);
+      // console.log("Child Added");
+      // console.log("Data Key " + data.key);
+      // console.log("Data Username " + data.val().username);
+      // console.log("Data Score " + data.val().userScore);
     });
     postsRef.on('child_changed', function(data) {
-      console.log("Child Changed");
-      console.log("Data Key " + data.key);
-      console.log("Data Username " + data.val().username);
-      console.log("Data Score " + data.val().userScore);
+      // console.log("Child Changed");
+      // console.log("Data Key " + data.key);
+      // console.log("Data Username " + data.val().username);
+      // console.log("Data Score " + data.val().userScore);
 
       javascript:(function() {
         $axure('@leaderboardrepeater').addRepeaterData([
@@ -44,7 +44,7 @@ function databaseQueries() {
       })();
     });
     postsRef.on('child_removed', function(data) {
-      console.log("Child Removed");
+      // console.log("Child Removed");
     });
   }
 
