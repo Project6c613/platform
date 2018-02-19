@@ -13,6 +13,15 @@ var config = {
 
 firebase.initializeApp(config);
 
+function writeParticipantData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/participants/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl,
+    participantOrHost: "participant",
+    userScore: 0,
+  });
+}
 
 // function onAuthStateChanged(user) {
 //
@@ -93,7 +102,7 @@ function updateLeaderboard(){
 
 function updateUserScore(userscore)
 {
-  user = firebase.auth().currentUser;
+
   var users = firebase.database().ref('/users/');
   oldScore, newScore = 0;
   console.log("Participant Data: " + users.child("participants"));
@@ -105,16 +114,13 @@ function updateUserScore(userscore)
     snapshot.forEach(userSnapshot => {
        oldScore = userSnapshot.val().userScore;
     });
-  console.log(userscore);
-  console.log(oldScore);
-  console.log(newScore);
 
   newScore = (oldScore + userscore);
     var userData = {
       username: user.displayName,
       email: user.email,
       profile_picture : user.photoURL,
-      participantOrHost: "participant",
+      participantOrHost: "host",
       userScore: newScore,
     };
 
@@ -127,36 +133,36 @@ function updateUserScore(userscore)
     }
 };
 
-
-
 $(document).ready(function() {
     console.log( "Begin Ready!" );
-     beginButton = document.getElementById('u448');
+    user = firebase.auth().currentUser;
+    writeParticipantData(user.uid, user.displayName, user.email, user.photoURL);
+     beginButton = document.getElementById('u447');
      beginButton.onclick = function () {
+        user = firebase.auth().currentUser;
         $(document).ready(function() {
           console.log("Competition Ready!");
-          profilePicture = document.getElementById('u275_img');
-          profilePicture.src = firebase.auth().currentUser.photoURL;
-          profileName = document.getElementById('u279');
-          profileName.innerHTML = firebase.auth().currentUser.displayName;
+           profilePicture = document.getElementById('u275_img');
+           profilePicture.src = user.photoURL;
+           profileName = document.getElementById('u279');
+           profileName.innerHTML = user.displayName;
 
-          correctButton = document.getElementById('u401');
-          correctButton.onclick = function () {
-            console.log("Correct Button clicked");
-           if($axure.getGlobalVariable('currentDifficulty') == "Easy"){
-             console.log("5 points added");
-             updateUserScore(5);
-             setTimeout(function(){ updateLeaderboard(); }, 5000);
-           }
+           correctButton = document.getElementById('u400');
+           correctButton.onclick = function () {
+             if($axure.getGlobalVariable('currentDifficulty') == "Easy"){
+               console.log("5 points added");
+               updateUserScore(5);
+               updateLeaderboard();
+             }
              else if($axure.getGlobalVariable('currentDifficulty') == "Medium"){
               console.log("10 points added");
                updateUserScore(10);
-              setTimeout(function(){ updateLeaderboard(); }, 5000);
+               updateLeaderboard();
              }
              else if($axure.getGlobalVariable('currentDifficulty') == "Hard"){
                console.log("20 points added");
                updateUserScore(20);
-               setTimeout(function(){ updateLeaderboard(); }, 5000);
+               updateLeaderboard();
              }
            }
         });

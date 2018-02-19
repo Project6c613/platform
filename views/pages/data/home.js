@@ -44,13 +44,23 @@ var currentUID;
  */
 // [START basic_write]
 function writeParticipantData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/participants/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl,
-    participantOrHost: "participant",
-    userScore: 0,
-  });
+
+  firebase.database().ref('/users/participants/' + userId).set(
+    {
+      username: name,
+      email: email,
+      profile_picture : imageUrl,
+      participantOrHost: "participant",
+      userScore: 0,
+    }, function(error)
+       {
+         if (error) {
+            console.log("Data could not be saved: " + error)
+         } else {
+            console.log("Data Saved")
+         }
+       }
+      );
 }
 // [END basic_write]
 
@@ -82,7 +92,7 @@ function onAuthStateChanged(user) {
     //splashPage.style.display = 'none';
     if(participant){
       writeParticipantData(user.uid, user.displayName, user.email, user.photoURL);
-      window.location.href = "facebookworkshop.html"
+      setTimeout(function(){ window.location.href = "facebookworkshop.html"; }, 2000);
     }
     else if(host) {
       writeHostData(user.uid, user.displayName, user.email, user.photoURL);
@@ -132,9 +142,8 @@ window.onload = function(){
       signInWithGoogle.onclick = function() {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider);
-      };
-
-    };
+      }
+    }
 
     loginHost.onclick = function() {
       participant = false;
@@ -145,12 +154,9 @@ window.onload = function(){
       signInWithGoogle.onclick = function() {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider);
-      };
-    };
-
-
-  };
-
+      }
+    }
+  }
   // // Bind Sign out button.
   // signOutButton.addEventListener('click', function() {
   //   firebase.auth().signOut();
