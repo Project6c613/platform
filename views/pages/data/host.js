@@ -90,13 +90,13 @@ function createAnnouncement(eventKey, annoucementsText)
         announcement:annoucementsText,
     });
 
-    // var updates = {};
-    // updates['/events/' + eventKey + '/announcements' + announcmentKey] = newAnnouncement;
-    //
-    // return firebase.database().ref().update(updates);
+    var updates = {};
+    updates['/events/' + eventKey + '/announcements' + announcmentKey] = newAnnouncement;
+
+    return firebase.database().ref().update(updates);
 }
 
-function createQuestion(eventKey, questionName, questionDescription, questionAnswer, questionDifficultyLevel,questionRoom)
+function createQuestion(eventKey, questionName, questionDescription, questionAnswer, questionFeedback, questionDifficultyLevel,questionRoom)
 {
     var questionID = firebase.database().ref().child('questions').push().key;
 
@@ -105,12 +105,14 @@ function createQuestion(eventKey, questionName, questionDescription, questionAns
         name : questionName,
         description: questionDescription,
         answer: questionAnswer,
+        feedback: questionFeedback,
         level: questionDifficultyLevel,
         room: questionRoom,
+        isSolved: false,
     };
 
     var updates = {};
-    updates['/events/' + eventKey + '/' + questionRoom + '/questions/' + questionID] = newQuestion;
+    updates['events/' + eventKey + '/' + questionRoom + '/questions/' + questionID] = newQuestion;
 
     return firebase.database().ref().update(updates);
 }
@@ -118,7 +120,12 @@ function createQuestion(eventKey, questionName, questionDescription, questionAns
 window.onload = function(){
 
   console.log("Host View Has Loaded");
-  //createQuestion("eventKey", "Question 7", "Question Description 7" , "How are you?", "Easy" , "Theater");
+  createNewEvent("Event: Testing Database","Event Code","1", "00");
+  createBadge("newEventKey", "badgeName", "badgeImageUrl");
+  createAnnouncement("newEventKey", "annoucementsText");
+  createQuestion("newEventKey", "questionName", "questionDescription", "questionAnswer", "questionFeedback", "questionDifficultyLevel","questionRoom");
+
+
   profilePicture = document.getElementById('u598_img');
   profileName = document.getElementById('u602_div');
 
@@ -145,11 +152,16 @@ window.onload = function(){
     //Bug -- results to default 1:00
     durationHr = document.getElementById("u630_input");
     durationMin = document.getElementById("u635_input");
-  }
 
-  createButton.onsubmit = function() {
-    createNewEvent(eventName.value,eventCode.value,durationHr.value, durationMin.value);
-  };
+    createButton.onsubmit = function() {
+      console.log(eventName);
+      console.log(eventCode);
+      console.log(durationHr);
+      console.log(durationMin);
+      console.log("submitting event");
+      createNewEvent(eventName.value,eventCode.value,durationHr.value, durationMin.value);
+    };
+  }
 
   editDetailsButton.onclick = function() {
     eventName = document.getElementById("u668_input");
