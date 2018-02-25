@@ -5,7 +5,10 @@ var announcementButton, announcementTextArea, sendAnnouncementButton;
 var createQuestionButton, addQuestionButton, editQuestionButton, questionName, questionDifficultyLevel, questionRoom;
 var globalEventKey
 var profilePicture, profileName;
+var savedHr, savedMin, savedAnnouncment, savedDescription, savedLevel, savedName, savedRoom;
+var goLive;
 
+goLive = "false";
 /**Notes
 - If push successful
 
@@ -115,48 +118,70 @@ function createQuestion(eventKey, questionName, questionDescription, questionAns
     return firebase.database().ref().update(updates);
 }
 
+function goLiveNow(eventKey, goLive)
+{
+	var startLive = 
+	{
+		islive: goLive,
+	};
+
+	var updates = {};
+	updates['/events/' + eventKey + '/live'] = startLive;
+	return firebase.database().ref().update(updates);
+}
+
 window.onload = function(){
 
   console.log("Host View Has Loaded");
   //createQuestion("eventKey", "Question 7", "Question Description 7" , "How are you?", "Easy" , "Theater");
-  profilePicture = document.getElementById('u249_img');
-  profileName = document.getElementById('u253_div');
+  profilePicture = document.getElementById('u598_img');
+  profileName = document.getElementById('u602_div');
 
-  createNewEventButton = document.getElementById('u259');
-  createButton = document.getElementById("u271");
+  createNewEventButton = document.getElementById('u608');
+  createButton = document.getElementById("u620");
 
-  editDetailsButton = document.getElementById('u357');
-  saveEditDetailsButton = document.getElementById('u319');
+  editDetailsButton = document.getElementById('u707');
+  saveEditDetailsButton = document.getElementById('u669');
 
-  createBadgeButton = document.getElementById('u335');
-  saveBadgeButton = document.getElementById('u401');
+  createBadgeButton = document.getElementById('u685');
+  saveBadgeButton = document.getElementById('u751');
 
-  announcementButton = document.getElementById('u263');
-  sendAnnouncementButton = document.getElementById('u427');
+  announcementButton = document.getElementById('u612');
+  sendAnnouncementButton = document.getElementById('u777');
 
-  addQuestionButton = document.getElementById('u342');
-  saveQuestionButton = document.getElementById('u365');
+  addQuestionButton = document.getElementById('u692');
+  saveQuestionButton = document.getElementById('u715');
   // editSaveQuestionButton = document.getElementById('u392');
+
+  goLiveButton = document.getElementById('u760');
 
   createNewEventButton.onclick = function() {
     console.log(createNewEventButton);
-    eventName = document.getElementById("u270_input");
-    eventCode = document.getElementById("u274_input");
+    eventName = document.getElementById("u619_input");
+    eventCode = document.getElementById("u623_input");
     //Bug -- results to default 1:00
-    durationHr = document.getElementById("u281_input");
-    durationMin = document.getElementById("u286_input");
+    durationHr = document.getElementById("u630_input");
+    durationMin = document.getElementById("u635_input");
+
+    durationHr.onchange = function(){savedHr = durationHr.value};
+    durationMin.onchange = function(){savedMin = durationMin.value};
+
   }
 
   createButton.onclick = function() {
-    createNewEvent(eventName.value,eventCode.value,durationHr.value, durationMin.value);
+  	if(eventName.value != "" && eventCode.value != "" && savedHr != " "  && savedMin != " ")
+  	{
+    	createNewEvent(eventName.value,eventCode.value,savedHr, savedMin);
+    	goLiveNow(globalEventKey, goLive);
+    }
   };
 
   editDetailsButton.onclick = function() {
-    eventName = document.getElementById("u318_input");
-    eventCode = document.getElementById("u328_input");
+    eventName = document.getElementById("u668_input");
+    eventCode = document.getElementById("u667_input");
     //Bug -- results to default 1:00
-    durationHr = document.getElementById("u333_input");
-    durationMin = document.getElementById("u317_input");
+    durationHr = document.getElementById("u678_input");
+    durationMin = document.getElementById("u683_input");
   }
 
   saveEditDetailsButton.onclick = function() {
@@ -164,8 +189,8 @@ window.onload = function(){
   }
 
   createBadgeButton.onclick = function () {
-    badgeName = document.getElementById("u402_input");
-    badgeImage = document.getElementById("u409_input");
+    badgeName = document.getElementById("u752_input");
+    badgeImage = document.getElementById("u759_input");
   }
 
   saveBadgeButton.onclick = function () {
@@ -173,19 +198,25 @@ window.onload = function(){
   }
 
   announcementButton.onclick = function () {
-    announcementTextArea = document.getElementById("u432_input");
+    announcementTextArea = document.getElementById("u782_input");
+    announcementTextArea.onchange = function(){savedAnnouncment = announcementTextArea.value};
   }
 
   sendAnnouncementButton.onclick = function () {
-    createAnnouncement(globalEventKey, announcementTextArea.value);
+    createAnnouncement(globalEventKey, savedAnnouncment);
   }
 
   addQuestionButton.onclick = function () {
-    questionName = document.getElementById("u363_input");
-    questionDescription = document.getElementById("u387_input");
-    questionAnswer = document.getElementById("u393_input");
-    questionDifficultyLevel = document.getElementById("u368_input");
-    questionRoom = document.getElementById("u364_input");
+    questionName = document.getElementById("u713_input");
+    questionDescription = document.getElementById("u737_input");
+    questionAnswer = document.getElementById("u743_input");
+    questionDifficultyLevel = document.getElementById("u718_input");
+    questionRoom = document.getElementById("u714_input");
+
+    questionName.onchange = function(){savedName = questionName.value};
+    questionDescription.onchange = function(){savedDescription = questionDescription.value};
+    questionDifficultyLevel.onchange = function(){savedLevel = questionDifficultyLevel.value};
+    questionRoom.onchange = function(){savedRoom = questionRoom.value};
   }
 
   saveQuestionButton.onclick = function () {
@@ -196,16 +227,23 @@ window.onload = function(){
     console.log(questionRoom.value);
 
 
-  //  createQuestion(globalEventKey, questionName.value, questionDescription.value , questionAnswer.value , questionDifficultyLevel.value , questionRoom.value)
-    editQuestionButton.onclick = function () {
+    createQuestion(globalEventKey, savedName, savedDescription , questionAnswer.value , savedLevel, savedRoom)
+    /*editQuestionButton.onclick = function () {
       console.log(questionName.value);
       console.log(questionDescription.value);
       console.log(questionAnswer.value);
       console.log(questionDifficultyLevel.value);
       console.log(questionRoom.value);
-    }
+    }*/
 
   }
+
+  goLiveButton.onclick = function () {
+  	goLive = "true";
+  	goLiveNow(globalEventKey, goLive);
+  }
+
+
 
 
 
