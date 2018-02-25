@@ -22,7 +22,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-var theaterRoom = document.getElementById('u158');
+var theaterRoom = document.getElementById('u168');
 var arcadeRoom = document.getElementById('u165');
 var libraryRoom = document.getElementById('u168');
 var bedroomRoom = document.getElementById('u173');
@@ -55,19 +55,49 @@ submitButton.onclick = function(room, question, submitAnswerInput)
 
 
 }*/
-
-javascript:(function() {
+/*javascript:(function() {
   $axure('@questionsrepeater').addRepeaterData([
     {
       Name: {type: 'text', text: 'World'},
       isSolved: {type: 'text', text: 'false'}
     }
   ]).refreshRepeater();
-})();
+})();*/
 
 window.onload = function(){
 
-  theaterRoom = document.getElementById('u156');
+  var announcementsText = document.getElementById('u138_input');
+  console.log("Announcements is loading");
+
+  //will need to get actual event key here
+  var announcmentsRef = firebase.database().ref('/events/eventKey/announcements/');
+  announcmentsRef.on('child_added', function(data)
+  {
+    console.log("Child Added");
+    console.log("Data Key " + data.key);
+    console.log("Data Actual Name " + data.val().announcement);
+    console.log("Data ID " + data.val().announcementID);
+    var announce = data.val().announcement;
+    console.log(announce);
+//    announcmentsText.value += data.val().announcement;
+    $axure('@announcements').css({'font-family': 'Komika Text'});
+    $axure('@announcements').css({'color': 'white'});
+    $axure('@announcements').css({'font-size': '16px'});
+    $('[data-label="announcements"]').append("<li>" + announce + "</li>");
+  });
+
+  announcmentsRef.on('child_changed', function(data)
+  {
+    console.log("Child Added");
+    console.log("Data Key " + data.key);
+    console.log("Data Actual Name " + data.val().annoucement);
+    console.log("Data ID " + data.val().announcementID);
+
+
+  });
+
+
+  theaterRoom = document.getElementById('u168');
   console.log("Player View Has Loaded");
   theaterRoom.onclick = function()
   {
@@ -82,6 +112,26 @@ window.onload = function(){
         var id = userSnapshot.val().answer;
         var description = userSnapshot.val().description;
         console.log(id + "poop" + description);
+
+        var count = userSnapshot.val().numQuestion;
+        console.log(count);
+        var numAnswered = 0;
+    //    announcmentsText.value += data.val().announcement;
+        $axure('[data-label="key progress theater room"]').css({'font-family': 'Komika Text'});
+        $axure('[data-label="key progress theater room"]').css({'color': 'white'});
+        $axure('[data-label="key progress theater room"]').css({'font-size': '16px'});
+        $('[data-label="key progress theater room"]').html(numAnswered + "/" + count);
+        //check and make sure it's not appending questions multiple times
+        $axure('@theaterquestionsrepeater').addRepeaterData([
+          {
+            name: {type: 'text', text: userSnapshot.val().name},
+            isSolved: {type: 'text', text: 'false'},
+            description: {type: 'text', text: userSnapshot.val().description},
+            difficulty: {type: 'text', text: userSnapshot.val().level},
+            answer: {type: 'text', text: userSnapshot.val().answer},
+            room: {type: 'text', text: userSnapshot.val().room},
+          }
+        ]).refreshRepeater();
       });
     }
     /* questionId.on('value', function(snapshot){
