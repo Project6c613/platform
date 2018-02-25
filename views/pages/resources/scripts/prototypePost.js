@@ -2141,9 +2141,11 @@ $axure.internal(function($ax) {
                 if(actionName == "scrollup" || actionName == "scrolldown") return;
                 
                 $(jqueryEventNamePair[0])[actionName](function (e) {
+                    
                     $ax.setjBrowserEvent(e);
                     return fireEventThroughContainers(axureName, undefined, false, [$ax.constants.PAGE_TYPE, $ax.constants.REFERENCE_DIAGRAM_OBJECT_TYPE, $ax.constants.DYNAMIC_PANEL_TYPE, $ax.constants.REPEATER],
                         [$ax.constants.PAGE_TYPE, $ax.constants.REFERENCE_DIAGRAM_OBJECT_TYPE]);
+                     
                 });
             })(key);
         }
