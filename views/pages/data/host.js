@@ -33,7 +33,6 @@ var config = {
 
 firebase.initializeApp(config);
 
-
 function createNewEvent(eventName,eventCode,durationHr, durationMin)
 {
   var newEventKey = firebase.database().ref().child('events').push().key;
@@ -118,16 +117,25 @@ function createQuestion(eventKey, questionName, questionDescription, questionAns
     return firebase.database().ref().update(updates);
 }
 
-function goLiveNow(eventKey, goLive)
-{
-	var startLive = 
-	{
-		islive: goLive,
-	};
+// function goLiveNow(eventKey, goLive)
+// {
+// 	var startLive =
+// 	{
+// 		islive: goLive,
+// 	};
+//
+// 	var updates = {};
+// 	updates['/events/' + eventKey + '/live'] = startLive;
+// 	return firebase.database().ref().update(updates);
+// }
 
-	var updates = {};
-	updates['/events/' + eventKey + '/live'] = startLive;
-	return firebase.database().ref().update(updates);
+function goLiveNow(eventKey, goLive) {
+  // Increment Ada's rank by 1.
+  var eventLiveRef = firebase.database().ref('events/' + eventKey + '/live' );
+  eventLiveRef.transaction(function(currentValue) {
+    // If users/participant/uid/userScore has never been set, currentScore will be `null`.
+    return goLive
+  });
 }
 
 window.onload = function(){

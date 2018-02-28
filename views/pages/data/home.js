@@ -78,26 +78,44 @@ function writeHostData(userId, name, email, imageUrl) {
 }
 // [END basic_write]
 
+
+var checkParticipantOrHost = function(ref) {
+     ref.once('value', function(data) {
+       console.log(data.val().participantOrHost);
+       if(data.val().participantOrHost == 'participant'){
+         participant = true;
+         host = false;
+       }
+       else if(data.val().participantOrHost == 'host'){
+         participant = false;
+         host = true;
+       }
+     });
+}
+
+
 /**
  * Triggers every time there is a change in the Firebase auth state (i.e. user signed-in or user signed out).
  */
 function onAuthStateChanged(user) {
   // We ignore token refresh events.
   if (user && currentUID === user.uid) {
-    setTimeout(function(){ window.location.href = "facebookworkshop.html"; }, 2000);
     return;
   }
 
   if (user) {
+    // var participantsRef = firebase.database().ref('/users/participants/' + user.uid);
+    // var hostsRef = firebase.database().ref('/users/hosts/' + user.uid);
+    // checkParticipantOrHost(participantsRef);
+    // checkParticipantOrHost(hostsRef);
     currentUID = user.uid;
-    //splashPage.style.display = 'none';
     if(participant){
       writeParticipantData(user.uid, user.displayName, user.email, user.photoURL);
-      setTimeout(function(){ window.location.href = "facebookworkshop.html"; }, 2000);
+      setTimeout(function(){ window.location.href = "player_view.html"; }, 2000);
     }
     else if(host) {
       writeHostData(user.uid, user.displayName, user.email, user.photoURL);
-      //window.location.href = "host_view.html"
+      setTimeout(function(){ window.location.href = "host_view.html"; }, 2000);
     }
   } else {
     // Set currentUID to null.
@@ -123,6 +141,25 @@ function createParticipantUser(eventKey, eventName,eventCode,durationHr, duratio
 };
 
 window.onload = function(){
+  var user = firebase.auth().currentUser; 
+  if (user) {
+    var participantsRef = firebase.database().ref('/users/participants/' + user.uid);
+    var hostsRef = firebase.database().ref('/users/hosts/' + user.uid);
+    checkParticipantOrHost(participantsRef);
+    checkParticipantOrHost(hostsRef);
+    currentUID = user.uid;
+    if(participant){
+      writeParticipantData(user.uid, user.displayName, user.email, user.photoURL);
+      setTimeout(function(){ window.location.href = "player_view.html"; }, 2000);
+    }
+    else if(host) {
+      writeHostData(user.uid, user.displayName, user.email, user.photoURL);
+      setTimeout(function(){ window.location.href = "host_view.html"; }, 2000);
+    }
+  } else {
+    // Set currentUID to null.
+    currentUID = null;
+  }
 
   console.log("Home screen loaded");
   // Bind Sign in button.
@@ -136,25 +173,51 @@ window.onload = function(){
       participant = true;
       host = false;
       console.log("participant logging in");
-      signInWithGoogle = document.getElementById("u41");
 
+      signInWithGoogle = document.getElementById("u41");
       signInWithGoogle.onclick = function() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider);
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(function() {
+          // Existing and future Auth states are now persisted in the current
+          // session only. Closing the window would clear any existing state even
+          // if a user forgets to sign out.
+          // ...
+          // New sign-in will be persisted with session persistence.
+          var provider = new firebase.auth.GoogleAuthProvider();
+          return firebase.auth().signInWithPopup(provider);
+        })
+        .catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
       }
     }
 
-    // loginHost.onclick = function() {
-    //   participant = false;
-    //   host = true;
-    //   console.log("host");
-    //   signInWithGoogle = document.getElementById("u41");
-    //
-    //   signInWithGoogle.onclick = function() {
-    //     var provider = new firebase.auth.GoogleAuthProvider();
-    //     firebase.auth().signInWithPopup(provider);
-    //   }
-    // }
+    loginHost.onclick = function() {
+      participant = false;
+      host = true;
+      console.log("host");
+      signInWithGoogle = document.getElementById("u41");
+
+      signInWithGoogle.onclick = function() {
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(function() {
+          // Existing and future Auth states are now persisted in the current
+          // session only. Closing the window would clear any existing state even
+          // if a user forgets to sign out.
+          // ...
+          // New sign-in will be persisted with session persistence.
+          var provider = new firebase.auth.GoogleAuthProvider();
+          return firebase.auth().signInWithPopup(provider);
+        })
+        .catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
+      }
+    }
   }
 
   // Listen for auth state changes

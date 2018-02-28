@@ -1,14 +1,26 @@
-/*
-	Theater - u158
-	Arcade - u165
-	Library - u168
-	Bedroom - u173
-	Living Room - u178
-	Foyer - u183
-	Kitchen - u188
-	Dining Room - u193
-	User Profile Button - u110
-*/
+var theaterRoom = document.getElementById('u168');
+var arcadeRoom = document.getElementById('u165');
+var libraryRoom = document.getElementById('u168');
+var bedroomRoom = document.getElementById('u173');
+var livingRoom = document.getElementById('u178');
+var foyerRoom = document.getElementById('u183');
+var kitchenRoom = document.getElementById('u188');
+var diningRoom = document.getElementById('u193');
+var userProfile = document.getElementById('u110');
+var submitAnswerInput = document.getElementById('u225_input');
+var submitButton = document.getElementById('u243');
+var userAnswer;
+var currentUID;
+
+var user, profilePicture, profileName, profileButton, pictureInProfile, nameInProfile;
+var correctButton;
+var signOutButton;
+var currentUID;
+var nameString;
+
+var addedQuestionsTheaterRoom = false;
+var addedQuestionsDiningRoom = false;
+var addedQuestionsKitchen = false;
 
 
 var config = {
@@ -22,17 +34,45 @@ var config = {
 
 firebase.initializeApp(config);
 
-var theaterRoom = document.getElementById('u168');
-var arcadeRoom = document.getElementById('u165');
-var libraryRoom = document.getElementById('u168');
-var bedroomRoom = document.getElementById('u173');
-var livingRoom = document.getElementById('u178');
-var foyerRoom = document.getElementById('u183');
-var kitchenRoom = document.getElementById('u188');
-var diningRoom = document.getElementById('u193');
-var userProfile = document.getElementById('u110');
-var submitAnswerInput = document.getElementById('u225_input');
-var submitButton = document.getElementById('u226');
+
+function onAuthStateChanged(user) {
+  // We ignore token refresh events.
+  if (user && currentUID === user.uid) {
+    return;
+  }
+
+  if (user) {
+    currentUID = user.uid;
+    addUserToLeaderboard();
+    console.log(currentUID);
+  } else {
+    // Set currentUID to null.
+    currentUID = null;
+    //setTimeout(function(){ window.location.href = "index.html"; }, 2000);
+  }
+}
+
+
+function updateUserScore(scoreToAdd) {
+  user = firebase.auth().currentUser;
+  // Increment Ada's rank by 1.
+  var userScoreRef = firebase.database().ref('events/eventKey/leaderboard/' + user.uid + '/participantScore' );
+  userScoreRef.transaction(function(currentScore) {
+    // If users/participant/uid/userScore has never been set, currentScore will be `null`.
+    return currentScore + scoreToAdd;
+  });
+}
+
+function addUserToLeaderboard()
+{
+    console.log("Adding User");
+    var user = firebase.auth().currentUser;
+    return firebase.database().ref('/events/eventKey/leaderboard/' + user.uid).set({
+        participant: user.displayName,
+        participantScore: 0,
+    });
+}
+
 
 //keep track of total number of keys
 /*
@@ -55,22 +95,49 @@ submitButton.onclick = function(room, question, submitAnswerInput)
 
 
 }*/
-/*javascript:(function() {
-  $axure('@questionsrepeater').addRepeaterData([
-    {
-      Name: {type: 'text', text: 'World'},
-      isSolved: {type: 'text', text: 'false'}
-    }
-  ]).refreshRepeater();
-})();*/
+
+function addQuestionsToRoom(roomRef, roomRepeaterName){
+  roomRef.child("questions").once('value', getQuestionData);
+  function getQuestionData(snapshot)
+  {
+    console.log(snapshot.val());
+    snapshot.forEach(userSnapshot => {
+      // var count = snapshot.val().numQuestion;
+      // console.log("Number of Questions" + count);
+      // var numAnswered = 0;
+      // $axure('[data-label="key progress theater room"]').css({'font-family': 'Komika Text'});
+      // $axure('[data-label="key progress theater room"]').css({'color': 'white'});
+      // $axure('[data-label="key progress theater room"]').css({'font-size': '16px'});
+      // $('[data-label="key progress theater room"]').html(numAnswered + "/" + count);
+      //check and make sure it's not appending questions multiple times
+        $axure(roomRepeaterName).addRepeaterData([
+          {
+            name: {type: 'text', text: userSnapshot.val().name},
+            isSolved: {type: 'text', text: 'false'},
+            description: {type: 'text', text: userSnapshot.val().description},
+            difficulty: {type: 'text', text: userSnapshot.val().level},
+            answer: {type: 'text', text: userSnapshot.val().answer},
+            room: {type: 'text', text: userSnapshot.val().room},
+          }
+        ]).refreshRepeater();
+    });
+  }
+}
 
 window.onload = function(){
+
+  profilePicture = document.getElementById('u131_img');
+  profilePicture.src = firebase.auth().currentUser.photoURL;
+  profileName = document.getElementById('u135');
+  nameString = firebase.auth().currentUser.displayName;
+  nameString = nameString.split(/\s(.+)/)[0];
+  profileName.innerHTML = nameString;
 
   var announcementsText = document.getElementById('u138_input');
   console.log("Announcements is loading");
 
   //will need to get actual event key here
-  var announcmentsRef = firebase.database().ref('/events/eventKey/announcements/');
+  var announcmentsRef = firebase.database().ref('/events/eventKey/announcements/').limitToLast(5);
   announcmentsRef.on('child_added', function(data)
   {
     console.log("Child Added");
@@ -92,57 +159,80 @@ window.onload = function(){
     console.log("Data Key " + data.key);
     console.log("Data Actual Name " + data.val().annoucement);
     console.log("Data ID " + data.val().announcementID);
-
-
   });
 
+  console.log("Player View Has Loaded");
 
   theaterRoom = document.getElementById('u168');
-  console.log("Player View Has Loaded");
   theaterRoom.onclick = function()
   {
-    var question = firebase.database().ref('/question/');
-    var questionId = firebase.database().ref('/events/eventKey/Theater/');
-    console.log("hihi" + questionId.child("questions"));
-    questionId.child("questions").once('value', getQuestionData);
-    function getQuestionData(snapshot)
-    {
-      console.log(snapshot.val());
-      snapshot.forEach(userSnapshot => {
-        var id = userSnapshot.val().answer;
-        var description = userSnapshot.val().description;
-        console.log(id + "poop" + description);
-
-        var count = userSnapshot.val().numQuestion;
-        console.log(count);
-        var numAnswered = 0;
-    //    announcmentsText.value += data.val().announcement;
-        $axure('[data-label="key progress theater room"]').css({'font-family': 'Komika Text'});
-        $axure('[data-label="key progress theater room"]').css({'color': 'white'});
-        $axure('[data-label="key progress theater room"]').css({'font-size': '16px'});
-        $('[data-label="key progress theater room"]').html(numAnswered + "/" + count);
-        //check and make sure it's not appending questions multiple times
-        $axure('@theaterquestionsrepeater').addRepeaterData([
-          {
-            name: {type: 'text', text: userSnapshot.val().name},
-            isSolved: {type: 'text', text: 'false'},
-            description: {type: 'text', text: userSnapshot.val().description},
-            difficulty: {type: 'text', text: userSnapshot.val().level},
-            answer: {type: 'text', text: userSnapshot.val().answer},
-            room: {type: 'text', text: userSnapshot.val().room},
-          }
-        ]).refreshRepeater();
-      });
+    var theaterRef = firebase.database().ref('/events/eventKey/Theater/');
+    if(addedQuestionsTheaterRoom == false){
+      addQuestionsToRoom(theaterRef,'@theaterquestionsrepeater');
+      addedQuestionsTheaterRoom = true;
     }
-    /* questionId.on('value', function(snapshot){
-      console.log(snapshot.val());
-      console.log(snapshot.val().answer);
-    //  console.log(questionId.value);
-  });*/
-  	//load questions for theater room
-  	//id - u204_state0 will get filled with the theater questions
-
   }
+
+  diningRoom = document.getElementById('u217');
+  diningRoom.onclick = function()
+  {
+    var diningRef = firebase.database().ref('/events/eventKey/Dining Room/');
+    if(addedQuestionsDiningRoom == false){
+      addQuestionsToRoom(diningRef,'@diningroomquestionsrepeater');
+      addedQuestionsDiningRoom = true;
+    }
+  }
+
+  kitchenRoom = document.getElementById('u210');
+  kitchenRoom.onclick = function()
+  {
+    var kitchenRef = firebase.database().ref('/events/eventKey/Kitchen/');
+    if(addedQuestionsKitchen == false){
+      addQuestionsToRoom(kitchenRef,'@kitchenquestionsrepeater');
+      addedQuestionsKitchen = true;
+    }
+  }
+
+  //Add LibraryRoom, ArcadeRoom, Bedroom, LivingRoom, Foyer
+
+  correctButton = document.getElementById('u257');
+  correctButton.onclick = function () {
+    console.log("Correct Button clicked");
+   if($axure.getGlobalVariable('currentDifficulty') == "Easy"){
+     console.log("5 points added");
+     updateUserScore(5);
+   }
+     else if($axure.getGlobalVariable('currentDifficulty') == "Medium"){
+      console.log("10 points added");
+       updateUserScore(10);
+     }
+     else if($axure.getGlobalVariable('currentDifficulty') == "Hard"){
+       console.log("20 points added");
+       updateUserScore(20);
+     }
+   }
+
+   profileButton = document.getElementById('u135');
+   profileButton.onclick = function () {
+     console.log("Profile Clicked");
+     $(document).ready(function() {
+
+       pictureInProfile = document.getElementById('u144_img');
+       pictureInProfile.src = firebase.auth().currentUser.photoURL;
+       nameInProfile = document.getElementById('u146');
+       nameString = firebase.auth().currentUser.displayName;
+       nameString = nameString.split(/\s(.+)/)[0];
+       nameInProfile.innerHTML = nameString;
+
+       signOutButton = document.getElementById('u158');
+       signOutButton.onclick = function() {
+         firebase.auth().signOut();
+       }
+     });
+   }
+
+
+   firebase.auth().onAuthStateChanged(onAuthStateChanged);
 }
 
 /*

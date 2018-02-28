@@ -9,41 +9,44 @@ var config = {
 
 firebase.initializeApp(config);
 
+function onAuthStateChanged(user) {
+  // We ignore token refresh events.
+  if (user && currentUID === user.uid) {
+    return;
+  }
+
+  if (user) {
+    currentUID = user.uid;
+    console.log(currentUID);
+  } else {
+    // Set currentUID to null.
+    currentUID = null;
+    setTimeout(function(){ window.location.href = "index.html"; }, 2000);
+  }
+}
+
 window.onload = function() {
 
+  var eventId = firebase.database().ref('/events/eventKey/');
+  eventId.child("leaderboard").once('value', getLeaderboardData);
+  function getLeaderboardData(snapshot)
+  {
+    console.log(snapshot.val());
+    snapshot.forEach(userSnapshot => {
+      javascript:(function() {
+        $axure('@finalleaderboardrepeater').addRepeaterData([
+          {
+            username: {type: 'text', text: userSnapshot.val().participant},
+            score: {type: 'text', text: userSnapshot.val().participantScore},
+          }
+        ]).refreshRepeater();
+      })();
+    });
+  }
 
-  // var myUserId = firebase.auth().currentUser.uid;
-  // var participants = firebase.database().ref('/users/participants/');
-  //
-  // var fetchUpdates = function(postsRef) {
-  //     postsRef.once('value', function(data) {
-  //       console.log(data.val().username);
-  //       console.log(data.val().score);
-  //     });
-  // }
-  //
-  // fetchUpdates(participants);
-
-
-  // var question = firebase.database().ref('/question/');
-  // var questionId = firebase.database().ref('/users/participants/');
-  // console.log("hihi" + questionId.child("questions"));
-  // questionId.child("questions").once('value', getQuestionData);
-  // function getQuestionData(snapshot)
-  // {
-  //   console.log(snapshot.val());
-  //   snapshot.forEach(userSnapshot => {
-  //     var id = userSnapshot.val().answer;
-  //     var description = userSnapshot.val().description;
-  //     javascript:(function() {
-  //       $axure('@finalleaderboardrepeater').addRepeaterData([
-  //         {
-  //           username: {type: 'text', text: data.val().username},
-  //           score: {type: 'text', text: data.val().userScore},
-  //         }
-  //       ]).refreshRepeater();
-  //     })();
-  //   });
-  // }
-
+  signOutButton = document.getElementById('u452');
+  signOutButton.onclick = function() {
+    firebase.auth().signOut();
+  }
+firebase.auth().onAuthStateChanged(onAuthStateChanged);
 }
