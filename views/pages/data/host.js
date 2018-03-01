@@ -35,7 +35,7 @@ firebase.initializeApp(config);
 
 function createNewEvent(eventName,eventCode,durationHr, durationMin)
 {
-  var newEventKey = firebase.database().ref().child('events').push().key;
+  var newEventKey = "FacebookEvent";
   globalEventKey = newEventKey;
 
     var eventData = {
