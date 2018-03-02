@@ -173,6 +173,7 @@ window.onload = function(){
   {
     var theaterRef = firebase.database().ref('/events/FacebookEvent/Theater/');
     if(addedQuestionsTheaterRoom == false){
+      alert("Theater Questions are loading");
       addQuestionsToRoom(theaterRef,'@theaterquestionsrepeater');
       addedQuestionsTheaterRoom = true;
     }
@@ -183,6 +184,7 @@ window.onload = function(){
   {
     var diningRef = firebase.database().ref('/events/FacebookEvent/Dining Room/');
     if(addedQuestionsDiningRoom == false){
+      alert("Dining Room Questions are loading");
       addQuestionsToRoom(diningRef,'@diningroomquestionsrepeater');
       addedQuestionsDiningRoom = true;
     }
@@ -193,6 +195,7 @@ window.onload = function(){
   {
     var kitchenRef = firebase.database().ref('/events/FacebookEvent/Kitchen/');
     if(addedQuestionsKitchen == false){
+      alert("Kitchen Questions are loading");
       addQuestionsToRoom(kitchenRef,'@kitchenquestionsrepeater');
       addedQuestionsKitchen = true;
     }
@@ -203,6 +206,7 @@ window.onload = function(){
   {
     var libraryRef = firebase.database().ref('/events/FacebookEvent/Library/');
     if(addedQuestionsLibrary == false){
+      alert("Library room Questions are loading");
       addQuestionsToRoom(libraryRef,'@libraryquestionsrepeater');
       addedQuestionsLibrary = true;
     }
@@ -213,6 +217,7 @@ window.onload = function(){
   {
     var arcadeRef = firebase.database().ref('/events/FacebookEvent/Arcade/');
     if(addedQuestionsArcade == false){
+      alert("Arcade Questions are loading");
       addQuestionsToRoom(arcadeRef,'@arcadequestionsrepeater');
       addedQuestionsArcade = true;
     }
@@ -223,6 +228,7 @@ window.onload = function(){
   {
     var bedroomRef = firebase.database().ref('/events/FacebookEvent/Bedroom/');
     if(addedQuestionsBedroom == false){
+      alert("Bedroom Questions are loading");
       addQuestionsToRoom(bedroomRef,'@bedroomquestionsrepeater');
       addedQuestionsBedroom = true;
     }
@@ -233,6 +239,7 @@ window.onload = function(){
   {
     var livingRef = firebase.database().ref('/events/FacebookEvent/Living Room/');
     if(addedQuestionsLivingRoom == false){
+      alert("Living Room Questions are loading");
       addQuestionsToRoom(livingRef,'@livingroomquestionsrepeater');
       addedQuestionsLivingRoom = true;
     }
@@ -243,6 +250,7 @@ window.onload = function(){
   {
     var foyerRef = firebase.database().ref('/events/FacebookEvent/Foyer/');
     if(addedQuestionsFoyer == false){
+      alert("Foyer Questions are loading");
       addQuestionsToRoom(foyerRef,'@foyerquestionsrepeater');
       addedQuestionsFoyer = true;
     }
