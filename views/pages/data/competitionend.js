@@ -27,7 +27,7 @@ function onAuthStateChanged(user) {
 
 window.onload = function() {
 
-  var eventId = firebase.database().ref('/events/eventKey/');
+  var eventId = firebase.database().ref('/events/FacebookEvent/');
   eventId.child("leaderboard").once('value', getLeaderboardData);
   function getLeaderboardData(snapshot)
   {
