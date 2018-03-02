@@ -141,7 +141,7 @@ function goLiveNow(eventKey, goLive) {
 window.onload = function(){
 
   console.log("Host View Has Loaded");
-  //createQuestion("eventKey", "Question 7", "Question Description 7" , "How are you?", "Easy" , "Theater");
+  
   profilePicture = document.getElementById('u455_img');
   profileName = document.getElementById('u457_div');
 

@@ -21,6 +21,11 @@ var nameString;
 var addedQuestionsTheaterRoom = false;
 var addedQuestionsDiningRoom = false;
 var addedQuestionsKitchen = false;
+var addedQuestionsLibrary = false;
+var addedQuestionsArcade = false;
+var addedQuestionsLivingRoom = false;
+var addedQuestionsFoyer = false;
+var addedQuestionsBedroom = false;
 
 
 var config = {
@@ -56,7 +61,7 @@ function onAuthStateChanged(user) {
 function updateUserScore(scoreToAdd) {
   user = firebase.auth().currentUser;
   // Increment Ada's rank by 1.
-  var userScoreRef = firebase.database().ref('events/eventKey/leaderboard/' + user.uid + '/participantScore' );
+  var userScoreRef = firebase.database().ref('events/FacebookEvent/leaderboard/' + user.uid + '/participantScore' );
   userScoreRef.transaction(function(currentScore) {
     // If users/participant/uid/userScore has never been set, currentScore will be `null`.
     return currentScore + scoreToAdd;
@@ -67,7 +72,7 @@ function addUserToLeaderboard()
 {
     console.log("Adding User");
     var user = firebase.auth().currentUser;
-    return firebase.database().ref('/events/eventKey/leaderboard/' + user.uid).set({
+    return firebase.database().ref('/events/FacebookEvent/leaderboard/' + user.uid).set({
         participant: user.displayName,
         participantScore: 0,
     });
@@ -137,7 +142,7 @@ window.onload = function(){
   console.log("Announcements is loading");
 
   //will need to get actual event key here
-  var announcmentsRef = firebase.database().ref('/events/eventKey/announcements/').limitToLast(5);
+  var announcmentsRef = firebase.database().ref('/events/FacebookEvent/announcements/').limitToLast(5);
   announcmentsRef.on('child_added', function(data)
   {
     console.log("Child Added");
@@ -166,7 +171,7 @@ window.onload = function(){
   theaterRoom = document.getElementById('u168');
   theaterRoom.onclick = function()
   {
-    var theaterRef = firebase.database().ref('/events/eventKey/Theater/');
+    var theaterRef = firebase.database().ref('/events/FacebookEvent/Theater/');
     if(addedQuestionsTheaterRoom == false){
       addQuestionsToRoom(theaterRef,'@theaterquestionsrepeater');
       addedQuestionsTheaterRoom = true;
@@ -176,7 +181,7 @@ window.onload = function(){
   diningRoom = document.getElementById('u217');
   diningRoom.onclick = function()
   {
-    var diningRef = firebase.database().ref('/events/eventKey/Dining Room/');
+    var diningRef = firebase.database().ref('/events/FacebookEvent/Dining Room/');
     if(addedQuestionsDiningRoom == false){
       addQuestionsToRoom(diningRef,'@diningroomquestionsrepeater');
       addedQuestionsDiningRoom = true;
@@ -186,14 +191,62 @@ window.onload = function(){
   kitchenRoom = document.getElementById('u210');
   kitchenRoom.onclick = function()
   {
-    var kitchenRef = firebase.database().ref('/events/eventKey/Kitchen/');
+    var kitchenRef = firebase.database().ref('/events/FacebookEvent/Kitchen/');
     if(addedQuestionsKitchen == false){
       addQuestionsToRoom(kitchenRef,'@kitchenquestionsrepeater');
       addedQuestionsKitchen = true;
     }
   }
 
-  //Add LibraryRoom, ArcadeRoom, Bedroom, LivingRoom, Foyer
+  libraryRoom = document.getElementById('u182');
+  libraryRoom.onclick = function()
+  {
+    var libraryRef = firebase.database().ref('/events/FacebookEvent/Library/');
+    if(addedQuestionsLibrary == false){
+      addQuestionsToRoom(libraryRef,'@libraryquestionsrepeater');
+      addedQuestionsLibrary = true;
+    }
+  }
+
+  arcadeRoom = document.getElementById('u175');
+  arcadeRoom.onclick = function()
+  {
+    var arcadeRef = firebase.database().ref('/events/FacebookEvent/Arcade/');
+    if(addedQuestionsArcade == false){
+      addQuestionsToRoom(arcadeRef,'@arcadequestionsrepeater');
+      addedQuestionsArcade = true;
+    }
+  }
+
+  bedRoom = document.getElementById('u189');
+  bedRoom.onclick = function()
+  {
+    var bedroomRef = firebase.database().ref('/events/FacebookEvent/Bedroom/');
+    if(addedQuestionsBedroom == false){
+      addQuestionsToRoom(bedroomRef,'@bedroomquestionsrepeater');
+      addedQuestionsBedroom = true;
+    }
+  }
+
+  livingRoom = document.getElementById('u196');
+  livingRoom.onclick = function()
+  {
+    var livingRef = firebase.database().ref('/events/FacebookEvent/Living Room/');
+    if(addedQuestionsLivingRoom == false){
+      addQuestionsToRoom(livingRef,'@livingroomquestionsrepeater');
+      addedQuestionsLivingRoom = true;
+    }
+  }
+
+  foyerRoom = document.getElementById('u203');
+  foyerRoom.onclick = function()
+  {
+    var foyerRef = firebase.database().ref('/events/FacebookEvent/Foyer/');
+    if(addedQuestionsFoyer == false){
+      addQuestionsToRoom(foyerRef,'@foyerquestionsrepeater');
+      addedQuestionsFoyer = true;
+    }
+  }
 
   correctButton = document.getElementById('u257');
   correctButton.onclick = function () {
