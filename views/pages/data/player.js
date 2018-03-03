@@ -85,7 +85,6 @@ submitButton.onclick = function(room, question, submitAnswerInput)
 {
 	//database data = new database;
 	//var answer = data.room.question.answer;
-
 	/*
 	if(answer == submitAnswerInput)
 	{
@@ -97,8 +96,6 @@ submitButton.onclick = function(room, question, submitAnswerInput)
 	{
 		//show wrong answer function
 	}
-
-
 }*/
 
 function addQuestionsToRoom(roomRef, roomRepeaterName){
@@ -303,47 +300,37 @@ arcadeRoom.onclick = function()
 	//id - u204_state0 will get filled with the theater questio
   ns
 }
-
 libraryRoom.onclick = function()
 {
 	//load questions for theater room
 	//id - u204_state0 will get filled with the theater questions
-
 }
 bedroomRoom.onclick = function()
 {
 	//load questions for theater room
 	//id - u204_state0 will get filled with the theater questions
 }
-
 livingRoom.onclick = function()
 {
 	//load questions for theater room
 	//id - u204_state0 will get filled with the theater questions
-
 }
-
 foyerRoom.onclick = function()
 {
 	//load questions for theater room
 	//id - u204_state0 will get filled with the theater questions
 }
-
 kitchenRoom.onclick = function()
 {
 	//load questions for theater room
 	//id - u204_state0 will get filled with the theater questions
-
 }
-
 diningRoom.onclick = function()
 {
 	//load questions for theater room
 	//id - u204_state0 will get filled with the theater questions
 }
-
 userProfile.onclick = function()
 {
 	//fill user info
-
 }*/
