@@ -135,7 +135,7 @@
 #u6 {
   position:fixed;
   left:50%;
-  margin-left:-192.5px;
+  margin-left:-199px;
   top:125px;
   visibility:hidden;
 }
@@ -143,7 +143,7 @@
   position:relative;
   left:0px;
   top:0px;
-  width:385px;
+  width:398px;
   height:284px;
   background-image:none;
 }
@@ -160,7 +160,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:385px;
+  width:398px;
   height:284px;
 }
 #u7 {
@@ -168,7 +168,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:385px;
+  width:398px;
   height:284px;
 }
 #u8 {
@@ -176,7 +176,7 @@
   position:absolute;
   left:2px;
   top:134px;
-  width:381px;
+  width:394px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -202,8 +202,8 @@
 #u9 {
   border-width:0px;
   position:absolute;
-  left:115px;
-  top:71px;
+  left:122px;
+  top:77px;
   width:155px;
   height:16px;
   font-family:'ObelixPro';
@@ -242,8 +242,8 @@
 #u11 {
   border-width:0px;
   position:absolute;
-  left:133px;
-  top:132px;
+  left:140px;
+  top:138px;
   width:119px;
   height:22px;
   font-family:'ObelixPro';
@@ -305,8 +305,8 @@
 #u13 {
   border-width:0px;
   position:absolute;
-  left:168px;
-  top:206px;
+  left:175px;
+  top:212px;
   width:50px;
   height:22px;
   font-family:'ObelixPro';
@@ -366,8 +366,8 @@
 #u15 {
   border-width:0px;
   position:absolute;
-  left:185px;
-  top:172px;
+  left:192px;
+  top:178px;
   width:13px;
   height:18px;
   font-family:'Komika Text';
@@ -393,8 +393,8 @@
 #u17 {
   border-width:0px;
   position:absolute;
-  left:18px;
-  top:23px;
+  left:16px;
+  top:18px;
   width:16px;
   height:19px;
 }
@@ -449,16 +449,24 @@
 #u21 {
   position:fixed;
   left:50%;
-  margin-left:-208px;
+  margin-left:-199px;
   top:126px;
+  width:398px;
+  height:284px;
+  overflow:hidden;
   visibility:hidden;
 }
 #u21_state0 {
-  position:relative;
+  border-width:0px;
+  position:absolute;
   left:0px;
   top:0px;
-  width:416px;
-  height:293px;
+  width:398px;
+  height:284px;
+  -ms-overflow-x:hidden;
+  overflow-x:hidden;
+  -ms-overflow-y:hidden;
+  overflow-y:hidden;
   background-image:none;
 }
 #u21_state0_content {
@@ -474,23 +482,23 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:416px;
-  height:294px;
+  width:398px;
+  height:284px;
 }
 #u22 {
   border-width:0px;
   position:absolute;
   left:0px;
-  top:-1px;
-  width:416px;
-  height:294px;
+  top:0px;
+  width:398px;
+  height:284px;
 }
 #u23 {
   border-width:0px;
   position:absolute;
   left:2px;
-  top:139px;
-  width:412px;
+  top:134px;
+  width:394px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -539,8 +547,8 @@
 #u25 {
   border-width:0px;
   position:absolute;
-  left:164px;
-  top:44px;
+  left:155px;
+  top:59px;
   width:84px;
   height:18px;
   font-family:'ObelixPro';
@@ -568,8 +576,8 @@
 #u27 {
   border-width:0px;
   position:absolute;
-  left:19px;
-  top:23px;
+  left:13px;
+  top:16px;
   width:18px;
   height:21px;
 }
@@ -688,8 +696,8 @@
 #u34 {
   border-width:0px;
   position:absolute;
-  left:142px;
-  top:112px;
+  left:71px;
+  top:-6px;
   width:236px;
   height:28px;
 }
@@ -841,8 +849,8 @@
 #u41 {
   border-width:0px;
   position:absolute;
-  left:87px;
-  top:146px;
+  left:78px;
+  top:161px;
   width:242px;
   height:47px;
 }
@@ -1662,7 +1670,7 @@
 #u83 {
   position:fixed;
   left:50%;
-  margin-left:-192.5px;
+  margin-left:-197.5px;
   top:126px;
   visibility:hidden;
 }
@@ -1670,7 +1678,7 @@
   position:relative;
   left:0px;
   top:0px;
-  width:385px;
+  width:395px;
   height:284px;
   background-image:none;
 }
@@ -1687,7 +1695,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:385px;
+  width:395px;
   height:284px;
 }
 #u84 {
@@ -1695,7 +1703,7 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:385px;
+  width:395px;
   height:284px;
 }
 #u85 {
@@ -1703,7 +1711,7 @@
   position:absolute;
   left:2px;
   top:134px;
-  width:381px;
+  width:391px;
   visibility:hidden;
   word-wrap:break-word;
 }
@@ -1729,8 +1737,8 @@
 #u86 {
   border-width:0px;
   position:absolute;
-  left:115px;
-  top:71px;
+  left:120px;
+  top:72px;
   width:155px;
   height:16px;
   font-family:'ObelixPro';
@@ -1769,8 +1777,8 @@
 #u88 {
   border-width:0px;
   position:absolute;
-  left:133px;
-  top:132px;
+  left:138px;
+  top:133px;
   width:119px;
   height:22px;
   font-family:'ObelixPro';
@@ -1832,8 +1840,8 @@
 #u90 {
   border-width:0px;
   position:absolute;
-  left:168px;
-  top:206px;
+  left:173px;
+  top:211px;
   width:50px;
   height:22px;
   font-family:'ObelixPro';
@@ -1893,8 +1901,8 @@
 #u92 {
   border-width:0px;
   position:absolute;
-  left:185px;
-  top:172px;
+  left:190px;
+  top:173px;
   width:13px;
   height:18px;
   font-family:'Komika Text';
@@ -1920,8 +1928,8 @@
 #u94 {
   border-width:0px;
   position:absolute;
-  left:18px;
-  top:23px;
+  left:15px;
+  top:18px;
   width:18px;
   height:19px;
 }
