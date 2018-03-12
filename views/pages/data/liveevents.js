@@ -30,7 +30,7 @@ function onAuthStateChanged(user) {
   } else {
     // Set currentUID to null.
     currentUID = null;
-    setTimeout(function(){ window.location.href = "index.html"; }, 2000);
+    //setTimeout(function(){ window.location.href = "index.html"; }, 2000);
   }
 }
 

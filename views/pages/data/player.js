@@ -11,6 +11,8 @@ var submitAnswerInput = document.getElementById('u225_input');
 var submitButton = document.getElementById('u243');
 var userAnswer;
 var currentUID;
+var scoreBoard;
+var score = 0;
 
 var user, profilePicture, profileName, profileButton, pictureInProfile, nameInProfile;
 var correctButton;
@@ -53,7 +55,8 @@ function onAuthStateChanged(user) {
   } else {
     // Set currentUID to null.
     currentUID = null;
-    //setTimeout(function(){ window.location.href = "index.html"; }, 2000);
+    alert("Please Close The Session and Re-Login");
+    setTimeout(function(){ window.location.href = "index.html"; }, 2000);
   }
 }
 
@@ -66,6 +69,19 @@ function updateUserScore(scoreToAdd) {
     // If users/participant/uid/userScore has never been set, currentScore will be `null`.
     return currentScore + scoreToAdd;
   });
+}
+
+function updateScoreboard(scoreboard){
+  //Leaderboard
+  var users = firebase.database().ref('events/FacebookEvent/leaderboard/' + user.uid);
+  users.once('value', getUserScore);
+  function getUserScore(snapshot)
+  {
+    console.log(snapshot.val());
+    score = snapshot.val().participantScore;
+    console.log("Score: " + score);
+    scoreboard.innerHTML = score;
+  }
 }
 
 function addUserToLeaderboard()
@@ -128,14 +144,14 @@ function addQuestionsToRoom(roomRef, roomRepeaterName){
 
 window.onload = function(){
 
-  profilePicture = document.getElementById('u131_img');
+  profilePicture = document.getElementById('u144_img');
   profilePicture.src = firebase.auth().currentUser.photoURL;
-  profileName = document.getElementById('u135');
+  profileName = document.getElementById('u148');
   nameString = firebase.auth().currentUser.displayName;
   nameString = nameString.split(/\s(.+)/)[0];
   profileName.innerHTML = nameString;
 
-  var announcementsText = document.getElementById('u138_input');
+  var announcementsText = document.getElementById('u151_input');
   console.log("Announcements is loading");
 
   //will need to get actual event key here
@@ -165,108 +181,112 @@ window.onload = function(){
 
   console.log("Player View Has Loaded");
 
-  theaterRoom = document.getElementById('u168');
-  theaterRoom.onclick = function()
-  {
+  theaterRoom = document.getElementById('u181');
+//  theaterRoom.onclick = function()
+//  {
     var theaterRef = firebase.database().ref('/events/FacebookEvent/Theater/');
     if(addedQuestionsTheaterRoom == false){
-      alert("Theater Questions are loading");
+//      alert("Theater Questions are loading");
       addQuestionsToRoom(theaterRef,'@theaterquestionsrepeater');
       addedQuestionsTheaterRoom = true;
     }
-  }
+//  }
 
-  diningRoom = document.getElementById('u217');
-  diningRoom.onclick = function()
-  {
+  diningRoom = document.getElementById('u230');
+//  diningRoom.onclick = function()
+//  {
     var diningRef = firebase.database().ref('/events/FacebookEvent/Dining Room/');
     if(addedQuestionsDiningRoom == false){
-      alert("Dining Room Questions are loading");
+//      alert("Dining Room Questions are loading");
       addQuestionsToRoom(diningRef,'@diningroomquestionsrepeater');
       addedQuestionsDiningRoom = true;
     }
-  }
+//  }
 
-  kitchenRoom = document.getElementById('u210');
-  kitchenRoom.onclick = function()
-  {
+  kitchenRoom = document.getElementById('u223');
+//  kitchenRoom.onclick = function()
+//  {
     var kitchenRef = firebase.database().ref('/events/FacebookEvent/Kitchen/');
     if(addedQuestionsKitchen == false){
-      alert("Kitchen Questions are loading");
+//      alert("Kitchen Questions are loading");
       addQuestionsToRoom(kitchenRef,'@kitchenquestionsrepeater');
       addedQuestionsKitchen = true;
     }
-  }
+//  }
 
-  libraryRoom = document.getElementById('u182');
-  libraryRoom.onclick = function()
-  {
+  libraryRoom = document.getElementById('u195');
+//  libraryRoom.onclick = function()
+//  {
     var libraryRef = firebase.database().ref('/events/FacebookEvent/Library/');
     if(addedQuestionsLibrary == false){
-      alert("Library room Questions are loading");
+//      alert("Library room Questions are loading");
       addQuestionsToRoom(libraryRef,'@libraryquestionsrepeater');
       addedQuestionsLibrary = true;
     }
-  }
+//  }
 
-  arcadeRoom = document.getElementById('u175');
-  arcadeRoom.onclick = function()
-  {
+  arcadeRoom = document.getElementById('u188');
+//  arcadeRoom.onclick = function()
+//  {
     var arcadeRef = firebase.database().ref('/events/FacebookEvent/Arcade/');
     if(addedQuestionsArcade == false){
-      alert("Arcade Questions are loading");
+//      alert("Arcade Questions are loading");
       addQuestionsToRoom(arcadeRef,'@arcadequestionsrepeater');
       addedQuestionsArcade = true;
     }
-  }
+//  }
 
-  bedRoom = document.getElementById('u189');
-  bedRoom.onclick = function()
-  {
+  bedRoom = document.getElementById('u202');
+//  bedRoom.onclick = function()
+//  {
     var bedroomRef = firebase.database().ref('/events/FacebookEvent/Bedroom/');
     if(addedQuestionsBedroom == false){
-      alert("Bedroom Questions are loading");
+//      alert("Bedroom Questions are loading");
       addQuestionsToRoom(bedroomRef,'@bedroomquestionsrepeater');
       addedQuestionsBedroom = true;
     }
-  }
+//  }
 
-  livingRoom = document.getElementById('u196');
-  livingRoom.onclick = function()
-  {
+  livingRoom = document.getElementById('u209');
+//  livingRoom.onclick = function()
+//  {
     var livingRef = firebase.database().ref('/events/FacebookEvent/Living Room/');
     if(addedQuestionsLivingRoom == false){
-      alert("Living Room Questions are loading");
+//      alert("Living Room Questions are loading");
       addQuestionsToRoom(livingRef,'@livingroomquestionsrepeater');
       addedQuestionsLivingRoom = true;
     }
-  }
+//  }
 
-  foyerRoom = document.getElementById('u203');
-  foyerRoom.onclick = function()
-  {
+  foyerRoom = document.getElementById('u216');
+//  foyerRoom.onclick = function()
+//  {
     var foyerRef = firebase.database().ref('/events/FacebookEvent/Foyer/');
     if(addedQuestionsFoyer == false){
-      alert("Foyer Questions are loading");
+//      alert("Foyer Questions are loading");
       addQuestionsToRoom(foyerRef,'@foyerquestionsrepeater');
       addedQuestionsFoyer = true;
     }
-  }
+//  }
 
-  correctButton = document.getElementById('u257');
+  scoreBoard = document.getElementById('u433');
+  correctButton = document.getElementById('u270');
   correctButton.onclick = function () {
     console.log("Correct Button clicked");
    if($axure.getGlobalVariable('currentDifficulty') == "Easy"){
      console.log("5 points added");
      updateUserScore(5);
+     updateScoreboard(scoreBoard);
    }
      else if($axure.getGlobalVariable('currentDifficulty') == "Medium"){
       console.log("10 points added");
        updateUserScore(10);
+       updateScoreboard(scoreBoard);
      }
      else if($axure.getGlobalVariable('currentDifficulty') == "Hard"){
        console.log("20 points added");
        updateUserScore(20);
+       updateScoreboard(scoreBoard);
      }
    }
 
@@ -275,9 +295,9 @@ window.onload = function(){
      console.log("Profile Clicked");
      $(document).ready(function() {
 
-       pictureInProfile = document.getElementById('u144_img');
+       pictureInProfile = document.getElementById('u157_img');
        pictureInProfile.src = firebase.auth().currentUser.photoURL;
-       nameInProfile = document.getElementById('u146');
+       nameInProfile = document.getElementById('u159');
        nameString = firebase.auth().currentUser.displayName;
        nameString = nameString.split(/\s(.+)/)[0];
        nameInProfile.innerHTML = nameString;
@@ -292,45 +312,3 @@ window.onload = function(){
 
    firebase.auth().onAuthStateChanged(onAuthStateChanged);
 }
-
-/*
-arcadeRoom.onclick = function()
-{
-	//load questions for theater room
-	//id - u204_state0 will get filled with the theater questio
-  ns
-}
-libraryRoom.onclick = function()
-{
-	//load questions for theater room
-	//id - u204_state0 will get filled with the theater questions
-}
-bedroomRoom.onclick = function()
-{
-	//load questions for theater room
-	//id - u204_state0 will get filled with the theater questions
-}
-livingRoom.onclick = function()
-{
-	//load questions for theater room
-	//id - u204_state0 will get filled with the theater questions
-}
-foyerRoom.onclick = function()
-{
-	//load questions for theater room
-	//id - u204_state0 will get filled with the theater questions
-}
-kitchenRoom.onclick = function()
-{
-	//load questions for theater room
-	//id - u204_state0 will get filled with the theater questions
-}
-diningRoom.onclick = function()
-{
-	//load questions for theater room
-	//id - u204_state0 will get filled with the theater questions
-}
-userProfile.onclick = function()
-{
-	//fill user info
-}*/
