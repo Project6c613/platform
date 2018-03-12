@@ -141,35 +141,41 @@ function goLiveNow(eventKey, goLive) {
 window.onload = function(){
 
   console.log("Host View Has Loaded");
-  
-  profilePicture = document.getElementById('u455_img');
-  profileName = document.getElementById('u457_div');
 
-  createNewEventButton = document.getElementById('u465');
-  createButton = document.getElementById("u478");
+  profilePicture = document.getElementById('u470_img');
+  profilePicture.src = firebase.auth().currentUser.photoURL;
+  profileName = document.getElementById('u475');
+  profileName.innerHTML = "";
+ nameString = firebase.auth().currentUser.displayName;
+ nameString = nameString.split(/\s(.+)/)[0];
+ profileName.innerHTML = nameString;
 
-  editDetailsButton = document.getElementById('u565');
-  saveEditDetailsButton = document.getElementById('u527');
 
-  createBadgeButton = document.getElementById('u543');
-  saveBadgeButton = document.getElementById('u609');
+  createNewEventButton = document.getElementById('u480');
+  createButton = document.getElementById("u493");
 
-  announcementButton = document.getElementById('u469');
-  sendAnnouncementButton = document.getElementById('u636');
+  editDetailsButton = document.getElementById('u580');
+  saveEditDetailsButton = document.getElementById('u542');
 
-  addQuestionButton = document.getElementById('u550');
-  saveQuestionButton = document.getElementById('u573');
+  createBadgeButton = document.getElementById('u558');
+  saveBadgeButton = document.getElementById('u624');
+
+  announcementButton = document.getElementById('u484');
+  sendAnnouncementButton = document.getElementById('u651');
+
+  addQuestionButton = document.getElementById('u565');
+  saveQuestionButton = document.getElementById('u588');
   // editSaveQuestionButton = document.getElementById('u392');
 
-  goLiveButton = document.getElementById('u618');
+  goLiveButton = document.getElementById('u633');
 
   createNewEventButton.onclick = function() {
     console.log(createNewEventButton);
-    eventName = document.getElementById("u477_input");
-    eventCode = document.getElementById("u481_input");
+    eventName = document.getElementById("u492_input");
+    eventCode = document.getElementById("u496_input");
     //Bug -- results to default 1:00
-    durationHr = document.getElementById("u488_input");
-    durationMin = document.getElementById("u493_input");
+    durationHr = document.getElementById("u503_input");
+    durationMin = document.getElementById("u508_input");
 
     durationHr.onchange = function(){savedHr = durationHr.value};
     durationMin.onchange = function(){savedMin = durationMin.value};
@@ -185,11 +191,11 @@ window.onload = function(){
   };
 
   editDetailsButton.onclick = function() {
-    eventName = document.getElementById("u526_input");
-    eventCode = document.getElementById("u525_input");
+    eventName = document.getElementById("u541_input");
+    eventCode = document.getElementById("u540_input");
     //Bug -- results to default 1:00
-    durationHr = document.getElementById("u536_input");
-    durationMin = document.getElementById("u541_input");
+    durationHr = document.getElementById("u551_input");
+    durationMin = document.getElementById("u556_input");
   }
 
   saveEditDetailsButton.onclick = function() {
@@ -197,8 +203,8 @@ window.onload = function(){
   }
 
   createBadgeButton.onclick = function () {
-    badgeName = document.getElementById("u610_input");
-    badgeImage = document.getElementById("u617_input");
+    badgeName = document.getElementById("u625_input");
+    badgeImage = document.getElementById("u632_input");
   }
 
   saveBadgeButton.onclick = function () {
@@ -206,7 +212,7 @@ window.onload = function(){
   }
 
   announcementButton.onclick = function () {
-    announcementTextArea = document.getElementById("u641_input");
+    announcementTextArea = document.getElementById("u656_input");
     announcementTextArea.onchange = function(){savedAnnouncment = announcementTextArea.value};
   }
 
@@ -215,11 +221,11 @@ window.onload = function(){
   }
 
   addQuestionButton.onclick = function () {
-    questionName = document.getElementById("u571_input");
-    questionDescription = document.getElementById("u595_input");
-    questionAnswer = document.getElementById("u601_input");
-    questionDifficultyLevel = document.getElementById("u576_input");
-    questionRoom = document.getElementById("u572_input");
+    questionName = document.getElementById("u586_input");
+    questionDescription = document.getElementById("u610_input");
+    questionAnswer = document.getElementById("u616_input");
+    questionDifficultyLevel = document.getElementById("u591_input");
+    questionRoom = document.getElementById("u587_input");
 
     questionName.onchange = function(){savedName = questionName.value};
     questionDescription.onchange = function(){savedDescription = questionDescription.value};
