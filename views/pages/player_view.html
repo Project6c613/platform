@@ -1,16 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
-    <style>
-    @font-face {
-      font-family: "Komika Text";
-      src: url("komika.ttf");
-    }
-    @font-face {
-      font-family: "ObelixPro";
-      src: url("op.ttf");
-    }
-    </style>
     <title>Player View</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -22,6 +12,17 @@
     <link href="files/player_view/styles.css" type="text/css" rel="stylesheet"/>
     <link href="" type="text/css" rel="stylesheet"/>
     <link href="" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/player_view/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
   </head>
   <body>
     <div id="base" class="">
@@ -844,92 +845,83 @@
         </div>
       </div>
 
-      <!-- overlay (Rectangle) -->
-      <div id="u308" class="ax_default box_1" data-label="overlay">
-        <div id="u308_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u309" class="text" style="display:none; visibility: hidden">
-          <p><span></span></p>
-        </div>
-      </div>
-
       <!-- welcome panel (Dynamic Panel) -->
-      <div id="u310" class="ax_default" data-label="welcome panel">
-        <div id="u310_state0" class="panel_state" data-label="State1" style="">
-          <div id="u310_state0_content" class="panel_state_content">
+      <div id="u308" class="ax_default ax_default_hidden" data-label="welcome panel" style="display:none; visibility: hidden">
+        <div id="u308_state0" class="panel_state" data-label="State1" style="">
+          <div id="u308_state0_content" class="panel_state_content">
 
             <!-- Unnamed (Image) -->
-            <div id="u311" class="ax_default image">
-              <img id="u311_img" class="img " src="images/player_view/u301.png"/>
+            <div id="u309" class="ax_default image">
+              <img id="u309_img" class="img " src="images/player_view/u301.png"/>
               <!-- Unnamed () -->
-              <div id="u312" class="text" style="display:none; visibility: hidden">
+              <div id="u310" class="text" style="display:none; visibility: hidden">
                 <p><span></span></p>
               </div>
             </div>
 
             <!-- welcome (Rectangle) -->
-            <div id="u313" class="ax_default label" data-label="welcome">
-              <div id="u313_div" class=""></div>
+            <div id="u311" class="ax_default label" data-label="welcome">
+              <div id="u311_div" class=""></div>
               <!-- Unnamed () -->
-              <div id="u314" class="text">
+              <div id="u312" class="text">
                 <p><span>Welcome!</span></p>
               </div>
             </div>
 
             <!-- are you ready to start (Rectangle) -->
-            <div id="u315" class="ax_default paragraph" data-label="are you ready to start">
-              <div id="u315_div" class=""></div>
+            <div id="u313" class="ax_default paragraph" data-label="are you ready to start">
+              <div id="u313_div" class=""></div>
               <!-- Unnamed () -->
-              <div id="u316" class="text">
+              <div id="u314" class="text">
                 <p><span>Alice and Bob own a smart mansion with a multi-key security system that was said to be flawless. However, someone found a security flaw in their system and put the whole mansion on lockdown while they were still in there! Now it is up to you to override the lockdown program and help them escape from their mansion.</span></p>
               </div>
             </div>
 
             <!-- begin (HTML Button) -->
-            <div id="u317" class="ax_default html_button" data-label="begin">
-              <input id="u317_input" type="submit" value="Begin"/>
+            <div id="u315" class="ax_default html_button" data-label="begin">
+              <input id="u315_input" type="submit" value="Begin"/>
             </div>
           </div>
         </div>
       </div>
 
       <!-- competition end (Dynamic Panel) -->
-      <div id="u318" class="ax_default ax_default_hidden" data-label="competition end" style="display:none; visibility: hidden">
-        <div id="u318_state0" class="panel_state" data-label="State1" style="">
-          <div id="u318_state0_content" class="panel_state_content">
+      <div id="u316" class="ax_default ax_default_hidden" data-label="competition end" style="display:none; visibility: hidden">
+        <div id="u316_state0" class="panel_state" data-label="State1" style="">
+          <div id="u316_state0_content" class="panel_state_content">
 
             <!-- thanks for playing (Rectangle) -->
-            <div id="u319" class="ax_default label" data-label="thanks for playing">
-              <div id="u319_div" class=""></div>
+            <div id="u317" class="ax_default label" data-label="thanks for playing">
+              <div id="u317_div" class=""></div>
               <!-- Unnamed () -->
-              <div id="u320" class="text">
+              <div id="u318" class="text">
                 <p><span>Thanks for playing Escape the Mansion!</span></p>
               </div>
             </div>
 
             <!-- participants earned (Rectangle) -->
-            <div id="u321" class="ax_default label" data-label="participants earned">
-              <div id="u321_div" class=""></div>
+            <div id="u319" class="ax_default label" data-label="participants earned">
+              <div id="u319_div" class=""></div>
               <!-- Unnamed () -->
-              <div id="u322" class="text">
+              <div id="u320" class="text">
                 <p><span>All participants have earned </span></p><p><span>the following badge:</span></p>
               </div>
             </div>
 
             <!-- Unnamed (Image) -->
-            <div id="u323" class="ax_default image">
-              <img id="u323_img" class="img " src="images/player_view/u323.png"/>
+            <div id="u321" class="ax_default image">
+              <img id="u321_img" class="img " src="images/player_view/u321.png"/>
               <!-- Unnamed () -->
-              <div id="u324" class="text" style="display:none; visibility: hidden">
+              <div id="u322" class="text" style="display:none; visibility: hidden">
                 <p><span></span></p>
               </div>
             </div>
 
             <!-- participants earned (Rectangle) -->
-            <div id="u325" class="ax_default label" data-label="participants earned">
-              <div id="u325_div" class=""></div>
+            <div id="u323" class="ax_default label" data-label="participants earned">
+              <div id="u323_div" class=""></div>
               <!-- Unnamed () -->
-              <div id="u326" class="text">
+              <div id="u324" class="text">
                 <p><span>Facebook &amp; ASU Workshop</span></p>
               </div>
             </div>
@@ -938,46 +930,46 @@
       </div>
 
       <!-- final leaderboard panel (Dynamic Panel) -->
-      <div id="u327" class="ax_default ax_default_hidden" data-label="final leaderboard panel" style="display:none; visibility: hidden">
-        <div id="u327_state0" class="panel_state" data-label="State1" style="">
-          <div id="u327_state0_content" class="panel_state_content">
+      <div id="u325" class="ax_default ax_default_hidden" data-label="final leaderboard panel" style="display:none; visibility: hidden">
+        <div id="u325_state0" class="panel_state" data-label="State1" style="">
+          <div id="u325_state0_content" class="panel_state_content">
 
             <!-- finalleaderboardrepeater (Repeater) -->
-            <div id="u328" class="ax_default" data-label="finalleaderboardrepeater">
-              <script id="u328_script" type="axure-repeater-template" data-label="finalleaderboardrepeater">
+            <div id="u326" class="ax_default" data-label="finalleaderboardrepeater">
+              <script id="u326_script" type="axure-repeater-template" data-label="finalleaderboardrepeater">
 
                 <!-- Unnamed (Rectangle) -->
-                <div id="u329" class="ax_default box_3 u329">
-                  <div id="u329_div" class="u329_div"></div>
+                <div id="u327" class="ax_default box_3 u327">
+                  <div id="u327_div" class="u327_div"></div>
                   <!-- Unnamed () -->
-                  <div id="u330" class="u330 text" style="display:none; visibility: hidden">
+                  <div id="u328" class="u328 text" style="display:none; visibility: hidden">
                     <p><span></span></p>
                   </div>
                 </div>
 
                 <!-- index (Rectangle) -->
-                <div id="u331" class="ax_default label u331" data-label="index">
-                  <div id="u331_div" class="u331_div"></div>
+                <div id="u329" class="ax_default label u329" data-label="index">
+                  <div id="u329_div" class="u329_div"></div>
                   <!-- Unnamed () -->
-                  <div id="u332" class="u332 text">
+                  <div id="u330" class="u330 text">
                     <p><span>000.</span></p>
                   </div>
                 </div>
 
                 <!-- username (Rectangle) -->
-                <div id="u333" class="ax_default label u333" data-label="username">
-                  <div id="u333_div" class="u333_div"></div>
+                <div id="u331" class="ax_default label u331" data-label="username">
+                  <div id="u331_div" class="u331_div"></div>
                   <!-- Unnamed () -->
-                  <div id="u334" class="u334 text">
+                  <div id="u332" class="u332 text">
                     <p><span>Label</span></p>
                   </div>
                 </div>
 
                 <!-- score (Rectangle) -->
-                <div id="u335" class="ax_default label u335" data-label="score">
-                  <div id="u335_div" class="u335_div"></div>
+                <div id="u333" class="ax_default label u333" data-label="score">
+                  <div id="u333_div" class="u333_div"></div>
                   <!-- Unnamed () -->
-                  <div id="u336" class="u336 text">
+                  <div id="u334" class="u334 text">
                     <p><span>999</span></p>
                   </div>
                 </div>
@@ -988,19 +980,28 @@
       </div>
 
       <!-- theater questions (Dynamic Panel) -->
-      <div id="u337" class="ax_default ax_default_hidden" data-label="theater questions" style="display:none; visibility: hidden">
-        <div id="u337_state0" class="panel_state" data-label="State1" style="">
-          <div id="u337_state0_content" class="panel_state_content">
+      <div id="u335" class="ax_default ax_default_hidden" data-label="theater questions" style="display:none; visibility: hidden">
+        <div id="u335_state0" class="panel_state" data-label="State1" style="">
+          <div id="u335_state0_content" class="panel_state_content">
 
             <!-- theaterquestionsrepeater (Repeater) -->
-            <div id="u338" class="ax_default" data-label="theaterquestionsrepeater">
-              <script id="u338_script" type="axure-repeater-template" data-label="theaterquestionsrepeater">
+            <div id="u336" class="ax_default" data-label="theaterquestionsrepeater">
+              <script id="u336_script" type="axure-repeater-template" data-label="theaterquestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u339" class="ax_default u339" data-left="0" data-top="0" data-width="383" data-height="47">
+                <div id="u337" class="ax_default u337" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u340" class="ax_default box_1 u340" data-label="repeater background">
+                  <div id="u338" class="ax_default box_1 u338" data-label="repeater background">
+                    <div id="u338_div" class="u338_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u339" class="u339 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u340" class="ax_default box_1 ax_default_hidden u340" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u340_div" class="u340_div"></div>
                     <!-- Unnamed () -->
                     <div id="u341" class="u341 text" style="display:none; visibility: hidden">
@@ -1008,34 +1009,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u342" class="ax_default box_1 ax_default_hidden u342" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u342_div" class="u342_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u342" class="ax_default image u342" data-label="key repeater">
+                    <img id="u342_img" class="img u342_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u343" class="u343 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u344" class="ax_default image u344" data-label="key repeater">
-                    <img id="u344_img" class="img u344_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u345" class="u345 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u346" class="ax_default u346">
-                    <div id="u346_state0" class="panel_state u346_state0" data-label="State1" style="">
-                      <div id="u346_state0_content" class="panel_state_content u346_state0_content">
+                  <div id="u344" class="ax_default u344">
+                    <div id="u344_state0" class="panel_state u344_state0" data-label="State1" style="">
+                      <div id="u344_state0_content" class="panel_state_content u344_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u347" class="ax_default label u347" data-label="question name on repeater">
-                          <div id="u347_div" class="u347_div"></div>
+                        <div id="u345" class="ax_default label u345" data-label="question name on repeater">
+                          <div id="u345_div" class="u345_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u348" class="u348 text">
+                          <div id="u346" class="u346 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1050,19 +1042,28 @@
       </div>
 
       <!-- arcade questions (Dynamic Panel) -->
-      <div id="u349" class="ax_default ax_default_hidden" data-label="arcade questions" style="display:none; visibility: hidden">
-        <div id="u349_state0" class="panel_state" data-label="State1" style="">
-          <div id="u349_state0_content" class="panel_state_content">
+      <div id="u347" class="ax_default ax_default_hidden" data-label="arcade questions" style="display:none; visibility: hidden">
+        <div id="u347_state0" class="panel_state" data-label="State1" style="">
+          <div id="u347_state0_content" class="panel_state_content">
 
             <!-- arcadequestionsrepeater (Repeater) -->
-            <div id="u350" class="ax_default" data-label="arcadequestionsrepeater">
-              <script id="u350_script" type="axure-repeater-template" data-label="arcadequestionsrepeater">
+            <div id="u348" class="ax_default" data-label="arcadequestionsrepeater">
+              <script id="u348_script" type="axure-repeater-template" data-label="arcadequestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u351" class="ax_default u351" data-left="0" data-top="0" data-width="383" data-height="47">
+                <div id="u349" class="ax_default u349" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u352" class="ax_default box_1 u352" data-label="repeater background">
+                  <div id="u350" class="ax_default box_1 u350" data-label="repeater background">
+                    <div id="u350_div" class="u350_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u351" class="u351 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u352" class="ax_default box_1 ax_default_hidden u352" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u352_div" class="u352_div"></div>
                     <!-- Unnamed () -->
                     <div id="u353" class="u353 text" style="display:none; visibility: hidden">
@@ -1070,34 +1071,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u354" class="ax_default box_1 ax_default_hidden u354" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u354_div" class="u354_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u354" class="ax_default image u354" data-label="key repeater">
+                    <img id="u354_img" class="img u354_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u355" class="u355 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u356" class="ax_default image u356" data-label="key repeater">
-                    <img id="u356_img" class="img u356_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u357" class="u357 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u358" class="ax_default u358">
-                    <div id="u358_state0" class="panel_state u358_state0" data-label="State1" style="">
-                      <div id="u358_state0_content" class="panel_state_content u358_state0_content">
+                  <div id="u356" class="ax_default u356">
+                    <div id="u356_state0" class="panel_state u356_state0" data-label="State1" style="">
+                      <div id="u356_state0_content" class="panel_state_content u356_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u359" class="ax_default label u359" data-label="question name on repeater">
-                          <div id="u359_div" class="u359_div"></div>
+                        <div id="u357" class="ax_default label u357" data-label="question name on repeater">
+                          <div id="u357_div" class="u357_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u360" class="u360 text">
+                          <div id="u358" class="u358 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1112,19 +1104,28 @@
       </div>
 
       <!-- library questions (Dynamic Panel) -->
-      <div id="u361" class="ax_default ax_default_hidden" data-label="library questions" style="display:none; visibility: hidden">
-        <div id="u361_state0" class="panel_state" data-label="State1" style="">
-          <div id="u361_state0_content" class="panel_state_content">
+      <div id="u359" class="ax_default ax_default_hidden" data-label="library questions" style="display:none; visibility: hidden">
+        <div id="u359_state0" class="panel_state" data-label="State1" style="">
+          <div id="u359_state0_content" class="panel_state_content">
 
             <!-- libraryquestionsrepeater (Repeater) -->
-            <div id="u362" class="ax_default" data-label="libraryquestionsrepeater">
-              <script id="u362_script" type="axure-repeater-template" data-label="libraryquestionsrepeater">
+            <div id="u360" class="ax_default" data-label="libraryquestionsrepeater">
+              <script id="u360_script" type="axure-repeater-template" data-label="libraryquestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u363" class="ax_default u363" data-left="47" data-top="0" data-width="383" data-height="47">
+                <div id="u361" class="ax_default u361" data-left="47" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u364" class="ax_default box_1 u364" data-label="repeater background">
+                  <div id="u362" class="ax_default box_1 u362" data-label="repeater background">
+                    <div id="u362_div" class="u362_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u363" class="u363 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u364" class="ax_default box_1 ax_default_hidden u364" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u364_div" class="u364_div"></div>
                     <!-- Unnamed () -->
                     <div id="u365" class="u365 text" style="display:none; visibility: hidden">
@@ -1132,34 +1133,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u366" class="ax_default box_1 ax_default_hidden u366" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u366_div" class="u366_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u366" class="ax_default image u366" data-label="key repeater">
+                    <img id="u366_img" class="img u366_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u367" class="u367 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u368" class="ax_default image u368" data-label="key repeater">
-                    <img id="u368_img" class="img u368_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u369" class="u369 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u370" class="ax_default u370">
-                    <div id="u370_state0" class="panel_state u370_state0" data-label="State1" style="">
-                      <div id="u370_state0_content" class="panel_state_content u370_state0_content">
+                  <div id="u368" class="ax_default u368">
+                    <div id="u368_state0" class="panel_state u368_state0" data-label="State1" style="">
+                      <div id="u368_state0_content" class="panel_state_content u368_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u371" class="ax_default label u371" data-label="question name on repeater">
-                          <div id="u371_div" class="u371_div"></div>
+                        <div id="u369" class="ax_default label u369" data-label="question name on repeater">
+                          <div id="u369_div" class="u369_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u372" class="u372 text">
+                          <div id="u370" class="u370 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1174,19 +1166,28 @@
       </div>
 
       <!-- kitchen questions (Dynamic Panel) -->
-      <div id="u373" class="ax_default ax_default_hidden" data-label="kitchen questions" style="display:none; visibility: hidden">
-        <div id="u373_state0" class="panel_state" data-label="State1" style="">
-          <div id="u373_state0_content" class="panel_state_content">
+      <div id="u371" class="ax_default ax_default_hidden" data-label="kitchen questions" style="display:none; visibility: hidden">
+        <div id="u371_state0" class="panel_state" data-label="State1" style="">
+          <div id="u371_state0_content" class="panel_state_content">
 
             <!-- kitchenquestionsrepeater (Repeater) -->
-            <div id="u374" class="ax_default" data-label="kitchenquestionsrepeater">
-              <script id="u374_script" type="axure-repeater-template" data-label="kitchenquestionsrepeater">
+            <div id="u372" class="ax_default" data-label="kitchenquestionsrepeater">
+              <script id="u372_script" type="axure-repeater-template" data-label="kitchenquestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u375" class="ax_default u375" data-left="0" data-top="0" data-width="383" data-height="47">
+                <div id="u373" class="ax_default u373" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u376" class="ax_default box_1 u376" data-label="repeater background">
+                  <div id="u374" class="ax_default box_1 u374" data-label="repeater background">
+                    <div id="u374_div" class="u374_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u375" class="u375 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u376" class="ax_default box_1 ax_default_hidden u376" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u376_div" class="u376_div"></div>
                     <!-- Unnamed () -->
                     <div id="u377" class="u377 text" style="display:none; visibility: hidden">
@@ -1194,34 +1195,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u378" class="ax_default box_1 ax_default_hidden u378" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u378_div" class="u378_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u378" class="ax_default image u378" data-label="key repeater">
+                    <img id="u378_img" class="img u378_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u379" class="u379 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u380" class="ax_default image u380" data-label="key repeater">
-                    <img id="u380_img" class="img u380_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u381" class="u381 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u382" class="ax_default u382">
-                    <div id="u382_state0" class="panel_state u382_state0" data-label="State1" style="">
-                      <div id="u382_state0_content" class="panel_state_content u382_state0_content">
+                  <div id="u380" class="ax_default u380">
+                    <div id="u380_state0" class="panel_state u380_state0" data-label="State1" style="">
+                      <div id="u380_state0_content" class="panel_state_content u380_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u383" class="ax_default label u383" data-label="question name on repeater">
-                          <div id="u383_div" class="u383_div"></div>
+                        <div id="u381" class="ax_default label u381" data-label="question name on repeater">
+                          <div id="u381_div" class="u381_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u384" class="u384 text">
+                          <div id="u382" class="u382 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1236,19 +1228,28 @@
       </div>
 
       <!-- foyer questions (Dynamic Panel) -->
-      <div id="u385" class="ax_default ax_default_hidden" data-label="foyer questions" style="display:none; visibility: hidden">
-        <div id="u385_state0" class="panel_state" data-label="State1" style="">
-          <div id="u385_state0_content" class="panel_state_content">
+      <div id="u383" class="ax_default ax_default_hidden" data-label="foyer questions" style="display:none; visibility: hidden">
+        <div id="u383_state0" class="panel_state" data-label="State1" style="">
+          <div id="u383_state0_content" class="panel_state_content">
 
             <!-- foyerquestionsrepeater (Repeater) -->
-            <div id="u386" class="ax_default" data-label="foyerquestionsrepeater">
-              <script id="u386_script" type="axure-repeater-template" data-label="foyerquestionsrepeater">
+            <div id="u384" class="ax_default" data-label="foyerquestionsrepeater">
+              <script id="u384_script" type="axure-repeater-template" data-label="foyerquestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u387" class="ax_default u387" data-left="0" data-top="0" data-width="383" data-height="47">
+                <div id="u385" class="ax_default u385" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u388" class="ax_default box_1 u388" data-label="repeater background">
+                  <div id="u386" class="ax_default box_1 u386" data-label="repeater background">
+                    <div id="u386_div" class="u386_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u387" class="u387 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u388" class="ax_default box_1 ax_default_hidden u388" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u388_div" class="u388_div"></div>
                     <!-- Unnamed () -->
                     <div id="u389" class="u389 text" style="display:none; visibility: hidden">
@@ -1256,34 +1257,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u390" class="ax_default box_1 ax_default_hidden u390" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u390_div" class="u390_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u390" class="ax_default image u390" data-label="key repeater">
+                    <img id="u390_img" class="img u390_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u391" class="u391 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u392" class="ax_default image u392" data-label="key repeater">
-                    <img id="u392_img" class="img u392_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u393" class="u393 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u394" class="ax_default u394">
-                    <div id="u394_state0" class="panel_state u394_state0" data-label="State1" style="">
-                      <div id="u394_state0_content" class="panel_state_content u394_state0_content">
+                  <div id="u392" class="ax_default u392">
+                    <div id="u392_state0" class="panel_state u392_state0" data-label="State1" style="">
+                      <div id="u392_state0_content" class="panel_state_content u392_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u395" class="ax_default label u395" data-label="question name on repeater">
-                          <div id="u395_div" class="u395_div"></div>
+                        <div id="u393" class="ax_default label u393" data-label="question name on repeater">
+                          <div id="u393_div" class="u393_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u396" class="u396 text">
+                          <div id="u394" class="u394 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1298,19 +1290,28 @@
       </div>
 
       <!-- bedroom questions (Dynamic Panel) -->
-      <div id="u397" class="ax_default ax_default_hidden" data-label="bedroom questions" style="display:none; visibility: hidden">
-        <div id="u397_state0" class="panel_state" data-label="State1" style="">
-          <div id="u397_state0_content" class="panel_state_content">
+      <div id="u395" class="ax_default ax_default_hidden" data-label="bedroom questions" style="display:none; visibility: hidden">
+        <div id="u395_state0" class="panel_state" data-label="State1" style="">
+          <div id="u395_state0_content" class="panel_state_content">
 
             <!-- bedroomquestionsrepeater (Repeater) -->
-            <div id="u398" class="ax_default" data-label="bedroomquestionsrepeater">
-              <script id="u398_script" type="axure-repeater-template" data-label="bedroomquestionsrepeater">
+            <div id="u396" class="ax_default" data-label="bedroomquestionsrepeater">
+              <script id="u396_script" type="axure-repeater-template" data-label="bedroomquestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u399" class="ax_default u399" data-left="0" data-top="0" data-width="383" data-height="47">
+                <div id="u397" class="ax_default u397" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u400" class="ax_default box_1 u400" data-label="repeater background">
+                  <div id="u398" class="ax_default box_1 u398" data-label="repeater background">
+                    <div id="u398_div" class="u398_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u399" class="u399 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u400" class="ax_default box_1 ax_default_hidden u400" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u400_div" class="u400_div"></div>
                     <!-- Unnamed () -->
                     <div id="u401" class="u401 text" style="display:none; visibility: hidden">
@@ -1318,34 +1319,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u402" class="ax_default box_1 ax_default_hidden u402" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u402_div" class="u402_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u402" class="ax_default image u402" data-label="key repeater">
+                    <img id="u402_img" class="img u402_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u403" class="u403 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u404" class="ax_default image u404" data-label="key repeater">
-                    <img id="u404_img" class="img u404_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u405" class="u405 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u406" class="ax_default u406">
-                    <div id="u406_state0" class="panel_state u406_state0" data-label="State1" style="">
-                      <div id="u406_state0_content" class="panel_state_content u406_state0_content">
+                  <div id="u404" class="ax_default u404">
+                    <div id="u404_state0" class="panel_state u404_state0" data-label="State1" style="">
+                      <div id="u404_state0_content" class="panel_state_content u404_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u407" class="ax_default label u407" data-label="question name on repeater">
-                          <div id="u407_div" class="u407_div"></div>
+                        <div id="u405" class="ax_default label u405" data-label="question name on repeater">
+                          <div id="u405_div" class="u405_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u408" class="u408 text">
+                          <div id="u406" class="u406 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1360,19 +1352,28 @@
       </div>
 
       <!-- dining room questions (Dynamic Panel) -->
-      <div id="u409" class="ax_default ax_default_hidden" data-label="dining room questions" style="display:none; visibility: hidden">
-        <div id="u409_state0" class="panel_state" data-label="State1" style="">
-          <div id="u409_state0_content" class="panel_state_content">
+      <div id="u407" class="ax_default ax_default_hidden" data-label="dining room questions" style="display:none; visibility: hidden">
+        <div id="u407_state0" class="panel_state" data-label="State1" style="">
+          <div id="u407_state0_content" class="panel_state_content">
 
             <!-- diningroomquestionsrepeater (Repeater) -->
-            <div id="u410" class="ax_default" data-label="diningroomquestionsrepeater">
-              <script id="u410_script" type="axure-repeater-template" data-label="diningroomquestionsrepeater">
+            <div id="u408" class="ax_default" data-label="diningroomquestionsrepeater">
+              <script id="u408_script" type="axure-repeater-template" data-label="diningroomquestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u411" class="ax_default u411" data-left="0" data-top="0" data-width="383" data-height="47">
+                <div id="u409" class="ax_default u409" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u412" class="ax_default box_1 u412" data-label="repeater background">
+                  <div id="u410" class="ax_default box_1 u410" data-label="repeater background">
+                    <div id="u410_div" class="u410_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u411" class="u411 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u412" class="ax_default box_1 ax_default_hidden u412" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u412_div" class="u412_div"></div>
                     <!-- Unnamed () -->
                     <div id="u413" class="u413 text" style="display:none; visibility: hidden">
@@ -1380,34 +1381,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u414" class="ax_default box_1 ax_default_hidden u414" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u414_div" class="u414_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u414" class="ax_default image u414" data-label="key repeater">
+                    <img id="u414_img" class="img u414_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u415" class="u415 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u416" class="ax_default image u416" data-label="key repeater">
-                    <img id="u416_img" class="img u416_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u417" class="u417 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u418" class="ax_default u418">
-                    <div id="u418_state0" class="panel_state u418_state0" data-label="State1" style="">
-                      <div id="u418_state0_content" class="panel_state_content u418_state0_content">
+                  <div id="u416" class="ax_default u416">
+                    <div id="u416_state0" class="panel_state u416_state0" data-label="State1" style="">
+                      <div id="u416_state0_content" class="panel_state_content u416_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u419" class="ax_default label u419" data-label="question name on repeater">
-                          <div id="u419_div" class="u419_div"></div>
+                        <div id="u417" class="ax_default label u417" data-label="question name on repeater">
+                          <div id="u417_div" class="u417_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u420" class="u420 text">
+                          <div id="u418" class="u418 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1422,19 +1414,28 @@
       </div>
 
       <!-- living room questions (Dynamic Panel) -->
-      <div id="u421" class="ax_default ax_default_hidden" data-label="living room questions" style="display:none; visibility: hidden">
-        <div id="u421_state0" class="panel_state" data-label="State1" style="">
-          <div id="u421_state0_content" class="panel_state_content">
+      <div id="u419" class="ax_default ax_default_hidden" data-label="living room questions" style="display:none; visibility: hidden">
+        <div id="u419_state0" class="panel_state" data-label="State1" style="">
+          <div id="u419_state0_content" class="panel_state_content">
 
             <!-- livingroomquestionsrepeater (Repeater) -->
-            <div id="u422" class="ax_default" data-label="livingroomquestionsrepeater">
-              <script id="u422_script" type="axure-repeater-template" data-label="livingroomquestionsrepeater">
+            <div id="u420" class="ax_default" data-label="livingroomquestionsrepeater">
+              <script id="u420_script" type="axure-repeater-template" data-label="livingroomquestionsrepeater">
 
                 <!-- Unnamed (Group) -->
-                <div id="u423" class="ax_default u423" data-left="0" data-top="0" data-width="383" data-height="47">
+                <div id="u421" class="ax_default u421" data-left="0" data-top="0" data-width="383" data-height="47">
 
                   <!-- repeater background (Rectangle) -->
-                  <div id="u424" class="ax_default box_1 u424" data-label="repeater background">
+                  <div id="u422" class="ax_default box_1 u422" data-label="repeater background">
+                    <div id="u422_div" class="u422_div"></div>
+                    <!-- Unnamed () -->
+                    <div id="u423" class="u423 text" style="display:none; visibility: hidden">
+                      <p><span></span></p>
+                    </div>
+                  </div>
+
+                  <!-- answered fill (Rectangle) -->
+                  <div id="u424" class="ax_default box_1 ax_default_hidden u424" data-label="answered fill" style="display:none; visibility: hidden">
                     <div id="u424_div" class="u424_div"></div>
                     <!-- Unnamed () -->
                     <div id="u425" class="u425 text" style="display:none; visibility: hidden">
@@ -1442,34 +1443,25 @@
                     </div>
                   </div>
 
-                  <!-- answered fill (Rectangle) -->
-                  <div id="u426" class="ax_default box_1 ax_default_hidden u426" data-label="answered fill" style="display:none; visibility: hidden">
-                    <div id="u426_div" class="u426_div"></div>
+                  <!-- key repeater (Image) -->
+                  <div id="u426" class="ax_default image u426" data-label="key repeater">
+                    <img id="u426_img" class="img u426_img" src="images/player_view/key_repeater_u342.png"/>
                     <!-- Unnamed () -->
                     <div id="u427" class="u427 text" style="display:none; visibility: hidden">
                       <p><span></span></p>
                     </div>
                   </div>
 
-                  <!-- key repeater (Image) -->
-                  <div id="u428" class="ax_default image u428" data-label="key repeater">
-                    <img id="u428_img" class="img u428_img" src="images/player_view/key_repeater_u344.png"/>
-                    <!-- Unnamed () -->
-                    <div id="u429" class="u429 text" style="display:none; visibility: hidden">
-                      <p><span></span></p>
-                    </div>
-                  </div>
-
                   <!-- Unnamed (Dynamic Panel) -->
-                  <div id="u430" class="ax_default u430">
-                    <div id="u430_state0" class="panel_state u430_state0" data-label="State1" style="">
-                      <div id="u430_state0_content" class="panel_state_content u430_state0_content">
+                  <div id="u428" class="ax_default u428">
+                    <div id="u428_state0" class="panel_state u428_state0" data-label="State1" style="">
+                      <div id="u428_state0_content" class="panel_state_content u428_state0_content">
 
                         <!-- question name on repeater (Rectangle) -->
-                        <div id="u431" class="ax_default label u431" data-label="question name on repeater">
-                          <div id="u431_div" class="u431_div"></div>
+                        <div id="u429" class="ax_default label u429" data-label="question name on repeater">
+                          <div id="u429_div" class="u429_div"></div>
                           <!-- Unnamed () -->
-                          <div id="u432" class="u432 text">
+                          <div id="u430" class="u430 text">
                             <p><span>Question Name</span></p>
                           </div>
                         </div>
@@ -1484,26 +1476,62 @@
       </div>
 
       <!-- user score (Rectangle) -->
-      <div id="u433" class="ax_default label ax_default_hidden" data-label="user score" style="display:none; visibility: hidden">
-        <div id="u433_div" class=""></div>
+      <div id="u431" class="ax_default label ax_default_hidden" data-label="user score" style="display:none; visibility: hidden">
+        <div id="u431_div" class=""></div>
         <!-- Unnamed () -->
-        <div id="u434" class="text">
+        <div id="u432" class="text">
           <p><span>0</span></p>
         </div>
       </div>
+
+      <!-- comic (Dynamic Panel) -->
+      <div id="u433" class="ax_default" data-label="comic">
+        <div id="u433_state0" class="panel_state" data-label="State1" style="">
+          <div id="u433_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u434" class="ax_default box_2">
+              <div id="u434_div" class=""></div>
+              <!-- Unnamed () -->
+              <div id="u435" class="text" style="display:none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- panel1 (Image) -->
+            <div id="u436" class="ax_default image" data-label="panel1">
+              <img id="u436_img" class="img " src="images/player_view/panel1_u436.png"/>
+              <!-- Unnamed () -->
+              <div id="u437" class="text" style="display:none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- next (HTML Button) -->
+            <div id="u438" class="ax_default html_button" data-label="next">
+              <input id="u438_input" type="submit" value="Next"/>
+            </div>
+
+            <!-- panel2 (Image) -->
+            <div id="u439" class="ax_default image ax_default_hidden" data-label="panel2" style="display:none; visibility: hidden">
+              <img id="u439_img" class="img " src="images/player_view/panel2_u439.png"/>
+              <!-- Unnamed () -->
+              <div id="u440" class="text" style="display:none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+
+            <!-- panel3 (Image) -->
+            <div id="u441" class="ax_default image ax_default_hidden" data-label="panel3" style="display:none; visibility: hidden">
+              <img id="u441_img" class="img " src="images/player_view/panel3_u441.png"/>
+              <!-- Unnamed () -->
+              <div id="u442" class="text" style="display:none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
-    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-    <script src="data/player.js"></script>
-    <script src="resources/scripts/prototypePre.js"></script>
-    <script src="data/document.js"></script>
-    <script src="resources/scripts/prototypePost.js"></script>
-    <script src="files/player_view/data.js"></script>
-    <script type="text/javascript">
-      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
-      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
-      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
-    </script>
   </body>
 </html>
